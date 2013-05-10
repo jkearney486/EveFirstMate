@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EveFirstMate.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,11 @@ namespace EveFirstMate.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+
+            using (EVEEntities entities = new EVEEntities())
+            {
+                List<invMarketGroup> marketGroups = entities.invMarketGroups.Where(x => x.invMarketGroup1 == null).ToList();
+            }
 
             return View();
         }
