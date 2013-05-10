@@ -178,6 +178,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseController.cs" />
+    <Compile Include="Common\JsonNetResult.cs" />
+    <Compile Include="Controllers\MarketGroupsController.cs" />
     <Compile Include="Models\agtAgent.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -478,7 +481,9 @@
     <Content Include="Scripts\knockout\knockout.mapping.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
     <Content Include="Scripts\main.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -529,7 +534,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>4865</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:5891/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
