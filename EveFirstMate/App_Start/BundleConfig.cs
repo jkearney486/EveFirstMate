@@ -16,6 +16,8 @@ namespace EveFirstMate
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                         "~/Scripts/jquery/jquery-{version}.js",
                         "~/Scripts/jquery/jquery-ui-{version}.js",
+                        "~/Scripts/knockout/knockout-{version}.debug.js",
+                        "~/Scripts/knockout/knockout.mapping.debug.js",
                         "~/Scripts/main.js"));
 
             // Knockout & Knockout-mapping

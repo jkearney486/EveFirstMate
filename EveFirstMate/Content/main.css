@@ -10,21 +10,18 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
-    background-color: rgba(2, 2, 2, 1.0);
-}
-
 html,
 button,
 input,
 select,
 textarea {
+    background-color: rgba(2, 2, 2, 1.0);
     color: rgba(189, 189, 189, 1.0);
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: 62.5%;
+    line-height: 1.4em;
     padding: 40px 0 0;
     width: 100%;
     height: 100%;
@@ -119,26 +116,73 @@ a {
     }
 
 #wrapper {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.4em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+    #wrapper:before,
+    #wrapper:after {
+        content: " ";
+        display: table;
+    }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+    #wrapper:after {
+        clear: both;
+    }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+    #wrapper * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+#items {
+    width: 35%;
+    margin: 0 1%;
+    float: left;
 }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+#fitting {
+    width: 61%;
+    margin: 0 1%;
+    float: left;
 }
+
+#marketGroups {
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+#marketGroups a {
+    display: block;
+    background-color: rgba(2, 2, 2, 1.0);
+    color: rgba(189, 189, 189, 1.0);
+}
+
+#marketGroups a:hover {
+    /*color: rgba(189, 189, 189, 1.0);*/
+}
+
+#marketGroups ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1em;
+}
+
+    #marketGroups li > ul {
+        display: none;
+    }
+
+    #marketGroups li:hover > ul {
+        display: block;
+    }
+
 
 /* ==========================================================================
    Print styles.

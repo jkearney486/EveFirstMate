@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EveFirstMate.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,17 @@ namespace EveFirstMate.Common
 {
     public abstract partial class BaseController : Controller
     {
+        private EVEEntities _entities;
+        public EVEEntities Entities
+        {
+            get
+            {
+                if (_entities == null)
+                    _entities = new EVEEntities();
+                return _entities;
+            }
+        }
+
         /// <summary>
         /// Creates a JsonNetResult object that serializes the specified
         /// object to JavaScript Object Notation (JSON) format.
@@ -45,6 +57,13 @@ namespace EveFirstMate.Common
                 ContentEncoding = contentEncoding,
                 JsonRequestBehavior = behavior
             };
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (_entities != null)
+                _entities.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

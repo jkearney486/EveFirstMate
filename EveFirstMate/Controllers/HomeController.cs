@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EveFirstMate.Common;
+using EveFirstMate.ViewModels;
 
 namespace EveFirstMate.Controllers
 {
@@ -12,28 +13,10 @@ namespace EveFirstMate.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            EveViewModel viewModel = new EveViewModel();
+            viewModel.marketGroups = Entities.invMarketGroups.Where(x => x.invMarketGroup1 == null && (x.marketGroupName == "Ships" || x.marketGroupName == "Ship Equipment" || x.marketGroupName == "Ship Modifications")).ToList();
 
-            using (EVEEntities entities = new EVEEntities())
-            {
-                List<invMarketGroup> marketGroups = entities.invMarketGroups.Where(x => x.invMarketGroup1 == null).ToList();
-            }
-
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(viewModel);
         }
     }
 }
