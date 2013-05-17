@@ -30,5 +30,6 @@ namespace EveFirstMate.Models
         public virtual ICollection<invMarketGroup> invMarketGroups1 { get; set; }
         public virtual invMarketGroup invMarketGroup1 { get; set; }
         public virtual ICollection<invType> invTypes { get; set; }
+        public virtual eveIcon eveIcon { get; set; }
     }
 }

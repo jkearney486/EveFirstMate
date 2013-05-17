@@ -6,10 +6,6 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
 html,
 button,
 input,
@@ -141,14 +137,14 @@ a {
     }
 
 #items {
-    width: 35%;
-    margin: 0 1%;
+    width: 30%;
+    margin: 0 2%;
     float: left;
 }
 
 #fitting {
-    width: 61%;
-    margin: 0 1%;
+    width: 62%;
+    margin: 0 2%;
     float: left;
 }
 
@@ -157,16 +153,18 @@ a {
     margin: 0;
     padding: 0;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #marketGroups a {
     display: block;
     background-color: rgba(2, 2, 2, 1.0);
     color: rgba(189, 189, 189, 1.0);
+    text-decoration: none;
 }
 
 #marketGroups a:hover {
-    /*color: rgba(189, 189, 189, 1.0);*/
+    text-decoration: none;
 }
 
 #marketGroups ul {

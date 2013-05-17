@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6e87c5baa9f84ec2ae7aed2273d6e0c7" Name="Diagram1" ZoomLevel="29">
+      <Diagram DiagramId="6e87c5baa9f84ec2ae7aed2273d6e0c7" Name="Diagram1" ZoomLevel="106">
         <EntityTypeShape EntityType="EVEModel.agtAgent" Width="1.5" PointX="3" PointY="49.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EVEModel.agtAgentType" Width="1.5" PointX="0.75" PointY="45" IsExpanded="true" />
         <EntityTypeShape EntityType="EVEModel.chrAncestry" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
@@ -193,6 +193,10 @@
         <AssociationConnector Association="EVEModel.crpNPCCorporationTrades" ManuallyRouted="false" />
         <AssociationConnector Association="EVEModel.mapRegionJumps" ManuallyRouted="false" />
         <AssociationConnector Association="EVEModel.staOperationServices" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EVEModel.eveGraphic" Width="1.5" PointX="3.8723711110057177" PointY="2.3451959799719955" />
+        <EntityTypeShape EntityType="EVEModel.eveIcon" Width="1.5" PointX="6.7932229632480183" PointY="27.616675240740495" />
+        <AssociationConnector Association="EVEModel.FK_eveIcons_eveIcons" />
+        <AssociationConnector Association="EVEModel.FK_invMarketGroups_eveIcons" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

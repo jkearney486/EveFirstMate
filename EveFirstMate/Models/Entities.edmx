@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EVEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EVEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="EVEModelStoreContainer">
           <EntitySet Name="agtAgents" EntityType="EVEModel.Store.agtAgents" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="agtAgentTypes" EntityType="EVEModel.Store.agtAgentTypes" store:Type="Tables" Schema="dbo" />
@@ -30,6 +30,8 @@
           <EntitySet Name="dgmEffects" EntityType="EVEModel.Store.dgmEffects" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="dgmTypeAttributes" EntityType="EVEModel.Store.dgmTypeAttributes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="dgmTypeEffects" EntityType="EVEModel.Store.dgmTypeEffects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="eveGraphics" EntityType="EVEModel.Store.eveGraphics" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="eveIcons" EntityType="EVEModel.Store.eveIcons" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="eveUnits" EntityType="EVEModel.Store.eveUnits" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="invBlueprintTypes" EntityType="EVEModel.Store.invBlueprintTypes" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="invCategories" EntityType="EVEModel.Store.invCategories" store:Type="Tables" Schema="dbo" />
@@ -254,6 +256,14 @@
           <AssociationSet Name="dgmTypeEffects_FK_type" Association="EVEModel.Store.dgmTypeEffects_FK_type">
             <End Role="invTypes" EntitySet="invTypes" />
             <End Role="dgmTypeEffects" EntitySet="dgmTypeEffects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_eveIcons_eveIcons" Association="EVEModel.Store.FK_eveIcons_eveIcons">
+            <End Role="eveIcons" EntitySet="eveIcons" />
+            <End Role="eveIcons1" EntitySet="eveIcons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invMarketGroups_eveIcons" Association="EVEModel.Store.FK_invMarketGroups_eveIcons">
+            <End Role="eveIcons" EntitySet="eveIcons" />
+            <End Role="invMarketGroups" EntitySet="invMarketGroups" />
           </AssociationSet>
           <AssociationSet Name="invBlueprintTypes_FK_blueprintType" Association="EVEModel.Store.invBlueprintTypes_FK_blueprintType">
             <End Role="invTypes" EntitySet="invTypes" />
@@ -868,6 +878,29 @@
           <Property Name="effectID" Type="smallint" Nullable="false" />
           <Property Name="isDefault" Type="bit" />
         </EntityType>
+        <EntityType Name="eveGraphics">
+          <Key>
+            <PropertyRef Name="graphicID" />
+          </Key>
+          <Property Name="graphicID" Type="int" Nullable="false" />
+          <Property Name="graphicFile" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="obsolete" Type="bit" Nullable="false" />
+          <Property Name="graphicType" Type="varchar" MaxLength="100" />
+          <Property Name="collidable" Type="bit" />
+          <Property Name="directoryID" Type="int" />
+          <Property Name="graphicName" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="gfxRaceID" Type="varchar" MaxLength="255" />
+          <Property Name="colorScheme" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="eveIcons">
+          <Key>
+            <PropertyRef Name="iconID" />
+          </Key>
+          <Property Name="iconID" Type="int" Nullable="false" />
+          <Property Name="iconFile" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="eveUnits">
           <Key>
             <PropertyRef Name="unitID" />
@@ -1057,6 +1090,10 @@
           <Property Name="published" Type="bit" />
           <Property Name="marketGroupID" Type="int" />
           <Property Name="chanceOfDuplicating" Type="float" />
+          <Property Name="graphicID" Type="int" />
+          <Property Name="radius" Type="float" />
+          <Property Name="soundID" Type="int" />
+          <Property Name="iconID" Type="int" />
         </EntityType>
         <EntityType Name="invUniqueNames">
           <Key>
@@ -2035,6 +2072,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_eveIcons_eveIcons">
+          <End Role="eveIcons" Type="EVEModel.Store.eveIcons" Multiplicity="1" />
+          <End Role="eveIcons1" Type="EVEModel.Store.eveIcons" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="eveIcons">
+              <PropertyRef Name="iconID" />
+            </Principal>
+            <Dependent Role="eveIcons1">
+              <PropertyRef Name="iconID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invMarketGroups_eveIcons">
+          <End Role="eveIcons" Type="EVEModel.Store.eveIcons" Multiplicity="0..1" />
+          <End Role="invMarketGroups" Type="EVEModel.Store.invMarketGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eveIcons">
+              <PropertyRef Name="iconID" />
+            </Principal>
+            <Dependent Role="invMarketGroups">
+              <PropertyRef Name="iconID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="invBlueprintTypes_FK_blueprintType">
           <End Role="invTypes" Type="EVEModel.Store.invTypes" Multiplicity="1" />
           <End Role="invBlueprintTypes" Type="EVEModel.Store.invBlueprintTypes" Multiplicity="0..1" />
@@ -2971,8 +3032,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EVEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3513,6 +3573,16 @@
             <End Role="staOperations" EntitySet="staOperations" />
             <End Role="staServices" EntitySet="staServices" />
           </AssociationSet>
+          <EntitySet Name="eveGraphics" EntityType="EVEModel.eveGraphic" />
+          <EntitySet Name="eveIcons" EntityType="EVEModel.eveIcon" />
+          <AssociationSet Name="FK_eveIcons_eveIcons" Association="EVEModel.FK_eveIcons_eveIcons">
+            <End Role="eveIcon" EntitySet="eveIcons" />
+            <End Role="eveIcon1" EntitySet="eveIcons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invMarketGroups_eveIcons" Association="EVEModel.FK_invMarketGroups_eveIcons">
+            <End Role="eveIcon" EntitySet="eveIcons" />
+            <End Role="invMarketGroup" EntitySet="invMarketGroups" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="agtAgent">
           <Key>
@@ -4006,6 +4076,7 @@
           <NavigationProperty Name="invMarketGroups1" Relationship="EVEModel.invMarketGroups_FK_parentGroup" FromRole="invMarketGroups" ToRole="invMarketGroups1" />
           <NavigationProperty Name="invMarketGroup1" Relationship="EVEModel.invMarketGroups_FK_parentGroup" FromRole="invMarketGroups1" ToRole="invMarketGroups" />
           <NavigationProperty Name="invTypes" Relationship="EVEModel.invTypes_FK_marketGroup" FromRole="invMarketGroups" ToRole="invTypes" />
+          <NavigationProperty Name="eveIcon" Relationship="EVEModel.FK_invMarketGroups_eveIcons" FromRole="invMarketGroup" ToRole="eveIcon" />
         </EntityType>
         <EntityType Name="invMetaGroup">
           <Key>
@@ -4119,6 +4190,10 @@
           <NavigationProperty Name="agtAgents" Relationship="EVEModel.agtResearchAgents" FromRole="invTypes" ToRole="agtAgents" />
           <NavigationProperty Name="crpNPCCorporations" Relationship="EVEModel.crpNPCCorporationResearchFields" FromRole="invTypes" ToRole="crpNPCCorporations" />
           <NavigationProperty Name="crpNPCCorporations1" Relationship="EVEModel.crpNPCCorporationTrades" FromRole="invTypes" ToRole="crpNPCCorporations" />
+          <Property Type="Int32" Name="graphicID" />
+          <Property Type="Double" Name="radius" />
+          <Property Type="Int32" Name="soundID" />
+          <Property Type="Int32" Name="iconID" />
         </EntityType>
         <EntityType Name="invUniqueName">
           <Key>
@@ -6009,6 +6084,56 @@
           <End Role="staOperations" Type="EVEModel.staOperation" Multiplicity="*" />
           <End Role="staServices" Type="EVEModel.staService" Multiplicity="*" />
         </Association>
+        <EntityType Name="eveGraphic">
+          <Key>
+            <PropertyRef Name="graphicID" />
+          </Key>
+          <Property Type="Int32" Name="graphicID" Nullable="false" />
+          <Property Type="String" Name="graphicFile" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="obsolete" Nullable="false" />
+          <Property Type="String" Name="graphicType" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="collidable" />
+          <Property Type="Int32" Name="directoryID" />
+          <Property Type="String" Name="graphicName" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="gfxRaceID" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="colorScheme" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="eveIcon">
+          <Key>
+            <PropertyRef Name="iconID" />
+          </Key>
+          <Property Type="Int32" Name="iconID" Nullable="false" />
+          <Property Type="String" Name="iconFile" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="eveIcons1" Relationship="EVEModel.FK_eveIcons_eveIcons" FromRole="eveIcon" ToRole="eveIcon1" />
+          <NavigationProperty Name="eveIcon1" Relationship="EVEModel.FK_eveIcons_eveIcons" FromRole="eveIcon1" ToRole="eveIcon" />
+          <NavigationProperty Name="invMarketGroups" Relationship="EVEModel.FK_invMarketGroups_eveIcons" FromRole="eveIcon" ToRole="invMarketGroup" />
+        </EntityType>
+        <Association Name="FK_eveIcons_eveIcons">
+          <End Type="EVEModel.eveIcon" Role="eveIcon" Multiplicity="1" />
+          <End Type="EVEModel.eveIcon" Role="eveIcon1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="eveIcon">
+              <PropertyRef Name="iconID" />
+            </Principal>
+            <Dependent Role="eveIcon1">
+              <PropertyRef Name="iconID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invMarketGroups_eveIcons">
+          <End Type="EVEModel.eveIcon" Role="eveIcon" Multiplicity="0..1" />
+          <End Type="EVEModel.invMarketGroup" Role="invMarketGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eveIcon">
+              <PropertyRef Name="iconID" />
+            </Principal>
+            <Dependent Role="invMarketGroup">
+              <PropertyRef Name="iconID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6495,6 +6620,10 @@
           <EntitySetMapping Name="invTypes">
             <EntityTypeMapping TypeName="EVEModel.invType">
               <MappingFragment StoreEntitySet="invTypes">
+                <ScalarProperty Name="iconID" ColumnName="iconID" />
+                <ScalarProperty Name="soundID" ColumnName="soundID" />
+                <ScalarProperty Name="radius" ColumnName="radius" />
+                <ScalarProperty Name="graphicID" ColumnName="graphicID" />
                 <ScalarProperty Name="typeID" ColumnName="typeID" />
                 <ScalarProperty Name="groupID" ColumnName="groupID" />
                 <ScalarProperty Name="typeName" ColumnName="typeName" />
@@ -7017,6 +7146,31 @@
               <ScalarProperty Name="serviceID" ColumnName="serviceID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="eveGraphics">
+            <EntityTypeMapping TypeName="EVEModel.eveGraphic">
+              <MappingFragment StoreEntitySet="eveGraphics">
+                <ScalarProperty Name="colorScheme" ColumnName="colorScheme" />
+                <ScalarProperty Name="gfxRaceID" ColumnName="gfxRaceID" />
+                <ScalarProperty Name="graphicName" ColumnName="graphicName" />
+                <ScalarProperty Name="directoryID" ColumnName="directoryID" />
+                <ScalarProperty Name="collidable" ColumnName="collidable" />
+                <ScalarProperty Name="graphicType" ColumnName="graphicType" />
+                <ScalarProperty Name="obsolete" ColumnName="obsolete" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="graphicFile" ColumnName="graphicFile" />
+                <ScalarProperty Name="graphicID" ColumnName="graphicID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eveIcons">
+            <EntityTypeMapping TypeName="EVEModel.eveIcon">
+              <MappingFragment StoreEntitySet="eveIcons">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="iconFile" ColumnName="iconFile" />
+                <ScalarProperty Name="iconID" ColumnName="iconID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

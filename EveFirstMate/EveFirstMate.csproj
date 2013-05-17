@@ -265,6 +265,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\eveGraphic.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\eveIcon.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\eveUnit.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -425,6 +431,7 @@
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\EveViewModel.cs" />
+    <Compile Include="ViewModels\MarketGroupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\main.css" />

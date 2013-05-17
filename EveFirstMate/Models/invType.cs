@@ -55,6 +55,10 @@ namespace EveFirstMate.Models
         public Nullable<bool> published { get; set; }
         public Nullable<int> marketGroupID { get; set; }
         public Nullable<double> chanceOfDuplicating { get; set; }
+        public Nullable<int> graphicID { get; set; }
+        public Nullable<double> radius { get; set; }
+        public Nullable<int> soundID { get; set; }
+        public Nullable<int> iconID { get; set; }
     
         public virtual ICollection<chrBloodline> chrBloodlines { get; set; }
         public virtual chrRace chrRace { get; set; }

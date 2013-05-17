@@ -97,5 +97,7 @@ namespace EveFirstMate.Models
         public DbSet<trnTranslation> trnTranslations { get; set; }
         public DbSet<warCombatZone> warCombatZones { get; set; }
         public DbSet<warCombatZoneSystem> warCombatZoneSystems { get; set; }
+        public DbSet<eveGraphic> eveGraphics { get; set; }
+        public DbSet<eveIcon> eveIcons { get; set; }
     }
 }
