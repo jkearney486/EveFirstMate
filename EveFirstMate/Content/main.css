@@ -156,28 +156,37 @@ a {
     overflow-x: hidden;
 }
 
-#marketGroups a {
-    display: block;
-    background-color: rgba(2, 2, 2, 1.0);
-    color: rgba(189, 189, 189, 1.0);
-    text-decoration: none;
-}
+    #marketGroups a {
+        display: block;
+        background-color: rgba(2, 2, 2, 1.0);
+        color: rgba(189, 189, 189, 1.0);
+        text-decoration: none;
+    }
 
-#marketGroups a:hover {
-    text-decoration: none;
-}
+    #marketGroups a:hover {
+        text-decoration: none;
+    }
 
-#marketGroups ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 1em;
-}
+    #marketGroups li {
+        background-color: rgba(2, 2, 2, 1.0);
+        color: rgba(189, 189, 189, 1.0);
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-    #marketGroups li > ul {
+    #marketGroups ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 1em;
+    }
+
+    #marketGroups li[data-node-state="closed"] > ul,
+    #marketGroups li[data-leaf-state="closed"] > ul {
         display: none;
     }
 
-    #marketGroups li:hover > ul {
+    #marketGroups li[data-node-state="open"] > ul,
+    #marketGroups li[data-leaf-state="open"] > ul {
         display: block;
     }
 

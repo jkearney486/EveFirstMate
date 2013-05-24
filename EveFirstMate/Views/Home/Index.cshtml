@@ -8,24 +8,24 @@
     <ul>
         @foreach(var group in groups) 
         {
-        <li>
-            @if (group.invMarketGroups1.Any()) 
+            if (group.invMarketGroups1.Any()) 
             {
                 if (group.iconID.HasValue)
                 {
                     
                 }
-                <a href="#">@group.marketGroupName</a>
-                <ul>
+                <li data-node-state="closed">
+                    @group.marketGroupName
                     @ShowTree(group.invMarketGroups1)
-                </ul>
+                </li>
             }
             else
             {
-                <a href="#" data-group-leaf="true">@group.marketGroupName</a>
-                @ShowLeaf(group.invTypes)
+                <li data-group-leaf="true" data-leaf-state="closed">
+                    @group.marketGroupName
+                    @ShowLeaf(group.invTypes)
+                </li>
             }
-        </li>
         }
     </ul>
 }
@@ -34,7 +34,7 @@
     <ul>
         @foreach (var item in items)
         {
-            <li>@item.typeName</li>
+            <li data-item-typeid="@item.typeID">@item.typeName</li>
         }
     </ul>
 }
@@ -44,8 +44,8 @@
         <ul>
         @foreach (var group in Model.marketGroups)
         {
-            <li>
-                <a href="#">@group.marketGroupName</a>
+            <li data-node-state="closed">
+                @group.marketGroupName
                 @ShowTree(group.invMarketGroups1)
             </li>
         }
