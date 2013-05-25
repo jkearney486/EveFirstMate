@@ -1,7 +1,64 @@
 ﻿(function () {
     "use strict";
 
+    var TypeModel, ItemInfoModel;
+
+    function transformTypeId(typeId) {
+        var cachedItems = this.cachedItems(),
+            itemType;
+
+        // Checks the cache to see if the item has already been accessed
+        if (cachedItems && cachedItems.length > 0) {
+            itemType = ko.utils.arrayFirst(cachedItems, function (item) {
+                return item.typeID() === typeId;
+            });
+        }
+
+        // if the item was found in the cache, make it the selected item
+        // otherwise, make a call to the api to find it
+        if (itemType) {
+            this.selectedItem(itemType);
+        } else {
+            $.ajax({
+                type: "GET",
+                url: "api/types/" + typeId,
+                data: "",
+                context: this,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    // if an item was returned, create a new TypeModel object of it
+                    // then add it to the cache and select it
+                    if (data) {
+                        itemType = new TypeModel(data);
+                        this.cachedItems.push(itemType);
+                        this.selectedItem(itemType);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        }
+
+        return typeId;
+    }
+
+    TypeModel = function (data) {
+        ko.mapping.fromJS(data, {}, this);
+    };
+
+    ItemInfoModel = function () {
+        this.selectedItem = ko.observable();
+        this.cachedItems = ko.observableArray([]);
+        this.selectedTypeId = ko.observable().subscribeTo("selectedTypeId", false, transformTypeId.bind(this));
+
+    };
+
     $(function () {
+        var itemsViewModel;
 
         // Change the state of the tree node that was clicked on
         // This changes the class of the sibling <li> tag based on the new state
@@ -99,5 +156,8 @@
             // don't propogate the event up to parent nodes
             return false;
         });
+
+        itemsViewModel = new ItemInfoModel();
+        ko.applyBindings(itemsViewModel, document.getElementById("itemInfo"));
     });
 }());

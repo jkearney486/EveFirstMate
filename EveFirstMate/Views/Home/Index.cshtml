@@ -8,9 +8,11 @@
     <menu id="marketGroups">
         @Html.Partial("_MarketGroups", Model.marketGroups)
     </menu>
-    <aside id="itemInfo" style="display: none;">
-        <h3 data-bind="text: typeName"></h3>
-        <p data-bind="text: description"></p>
+    <aside id="itemInfo">
+        <div data-bind="with: selectedItem">
+            <h3 data-bind="text: typeName"></h3>
+            <p data-bind="text: description"></p>
+        </div>
     </aside>
 </section>
 <section id="fitting">
