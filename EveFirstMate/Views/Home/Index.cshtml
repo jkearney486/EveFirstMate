@@ -4,53 +4,14 @@
     ViewBag.Title = "Home";
 }
 
-@helper ShowTree(ICollection<EveFirstMate.Models.invMarketGroup> groups) {
-    <ul>
-        @foreach(var group in groups) 
-        {
-            if (group.invMarketGroups1.Any()) 
-            {
-                if (group.iconID.HasValue)
-                {
-                    
-                }
-                <li data-node-state="closed">
-                    @group.marketGroupName
-                    @ShowTree(group.invMarketGroups1)
-                </li>
-            }
-            else
-            {
-                <li data-group-leaf="true" data-leaf-state="closed">
-                    @group.marketGroupName
-                    @ShowLeaf(group.invTypes)
-                </li>
-            }
-        }
-    </ul>
-}
-
-@helper ShowLeaf(ICollection<EveFirstMate.Models.invType> items) {
-    <ul>
-        @foreach (var item in items)
-        {
-            <li data-item-typeid="@item.typeID">@item.typeName</li>
-        }
-    </ul>
-}
-
 <section id="items">
     <menu id="marketGroups">
-        <ul>
-        @foreach (var group in Model.marketGroups)
-        {
-            <li data-node-state="closed">
-                @group.marketGroupName
-                @ShowTree(group.invMarketGroups1)
-            </li>
-        }
-        </ul>
+        @Html.Partial("_MarketGroups", Model.marketGroups)
     </menu>
+    <aside id="itemInfo" style="display: none;">
+        <h3 data-bind="text: typeName"></h3>
+        <p data-bind="text: description"></p>
+    </aside>
 </section>
 <section id="fitting">
     <div>

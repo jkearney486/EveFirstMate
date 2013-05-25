@@ -154,17 +154,14 @@ a {
     padding: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
 }
 
-    #marketGroups a {
-        display: block;
-        background-color: rgba(2, 2, 2, 1.0);
-        color: rgba(189, 189, 189, 1.0);
-        text-decoration: none;
-    }
-
-    #marketGroups a:hover {
-        text-decoration: none;
+    #marketGroups ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 1em;
+        position: relative;
     }
 
     #marketGroups li {
@@ -172,22 +169,52 @@ a {
         color: rgba(189, 189, 189, 1.0);
         text-decoration: none;
         cursor: pointer;
+        padding: 0.25em 0;
+        position: relative;
     }
 
-    #marketGroups ul {
-        list-style: none;
-        margin: 0;
-        padding: 0 0 0 1em;
+    #marketGroups li:hover {
+        background-color: rgba(78, 79, 80, 1.0);
+        color: rgba(189, 189, 189, 1.0);
+        text-decoration: none;
+        cursor: pointer;
     }
 
-    #marketGroups li[data-node-state="closed"] > ul,
-    #marketGroups li[data-leaf-state="closed"] > ul {
+    #marketGroups li.closed {
         display: none;
     }
 
-    #marketGroups li[data-node-state="open"] > ul,
-    #marketGroups li[data-leaf-state="open"] > ul {
+    #marketGroups li.open {
         display: block;
+        background-color: rgba(2, 2, 2, 1.0);
+        padding: 0;
+    }
+
+    #marketGroups ul.items li {
+        background-color: rgba(32, 32, 32, 1.0);
+        color: rgba(189, 189, 189, 1.0);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #marketGroups ul.items li:hover {
+        background-color: rgba(78, 79, 80, 1.0);
+        color: rgba(189, 189, 189, 1.0);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #marketGroups ul.items li.selected {
+        background-color: rgba(78, 79, 80, 1.0);
+    }
+
+    #marketGroups ul.items li.selected:hover {
+        background-color: rgba(131, 131, 131, 1.0);
+        color: rgba(220, 220, 220, 1.0);
+    }
+
+    #marketGroups li.open:hover {
+        background-color: rgba(2, 2, 2, 1.0);
     }
 
 

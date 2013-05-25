@@ -18,6 +18,7 @@ namespace EveFirstMate
                         "~/Scripts/jquery/jquery-ui-{version}.js",
                         "~/Scripts/knockout/knockout-{version}.debug.js",
                         "~/Scripts/knockout/knockout.mapping.debug.js",
+                        "~/Scripts/knockout/knockout-postbox.js",
                         "~/Scripts/main.js"));
 
             // Knockout & Knockout-mapping

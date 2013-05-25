@@ -1,0 +1,48 @@
+﻿@model List<EveFirstMate.Models.invMarketGroup>
+
+@helper ShowTree(ICollection<EveFirstMate.Models.invMarketGroup> groups) {
+    <ul>
+        @foreach(var group in groups) 
+        {
+            if (group.invMarketGroups1.Any()) 
+            {
+                <li data-node-state="closed">
+                    @group.marketGroupName
+                </li>
+                <li class="closed">
+                    @ShowTree(group.invMarketGroups1)
+                </li>
+            }
+            else
+            {
+                <li data-group-leaf="true" data-leaf-state="closed">
+                    @group.marketGroupName
+                </li>
+                <li class="closed">
+                    @ShowLeaf(group.invTypes)
+                </li>
+            }
+        }
+    </ul>
+}
+
+@helper ShowLeaf(ICollection<EveFirstMate.Models.invType> items) {
+    <ul class="items">
+        @foreach (var item in items)
+        {
+            <li data-item-typeid="@item.typeID">@item.typeName</li>
+        }
+    </ul>
+}
+
+<ul>
+    @foreach (var group in Model)
+    {
+        <li data-node-state="closed">
+            @group.marketGroupName
+        </li>
+        <li class="closed">
+            @ShowTree(group.invMarketGroups1)
+        </li>
+    }
+</ul>

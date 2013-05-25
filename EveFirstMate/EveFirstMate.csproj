@@ -180,6 +180,7 @@
   <ItemGroup>
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\JsonNetResult.cs" />
+    <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Models\agtAgent.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -432,6 +433,7 @@
     </Compile>
     <Compile Include="ViewModels\EveViewModel.cs" />
     <Compile Include="ViewModels\MarketGroupViewModel.cs" />
+    <Compile Include="ViewModels\TypeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\main.css" />
@@ -484,6 +486,8 @@
     <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout\knockout-2.2.1.js" />
+    <Content Include="Scripts\knockout\knockout-postbox.js" />
+    <Content Include="Scripts\knockout\knockout-postbox.min.js" />
     <Content Include="Scripts\knockout\knockout.mapping.debug.js" />
     <Content Include="Scripts\knockout\knockout.mapping.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
@@ -513,6 +517,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\_MarketGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
