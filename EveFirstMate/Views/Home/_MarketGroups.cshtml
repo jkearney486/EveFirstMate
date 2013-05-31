@@ -1,53 +1,11 @@
-﻿@model List<EveFirstMate.Models.invMarketGroup>
-
-@*@helper ShowTree(ICollection<EveFirstMate.Models.invMarketGroup> groups, int depth)
-{
-    var indent = depth.ToString() + "em";
-    depth++;
-    
-    <ul>
-        @foreach(var group in groups) 
-        {
-            if (group.invMarketGroups1.Any()) 
-            {
-                <li data-node-state="closed" style="text-indent: @indent">
-                    @group.marketGroupName
-                </li>
-                <li class="closed" style="text-indent: @indent">
-                    @ShowTree(group.invMarketGroups1, depth)
-                </li>
-            }
-            else
-            {
-                <li data-group-leaf="true" data-leaf-state="closed" style="text-indent: @indent">
-                    @group.marketGroupName
-                </li>
-                <li class="closed" style="text-indent: @indent">
-                    @ShowLeaf(group.invTypes, depth)
-                </li>
-            }
-        }
-    </ul>
-}
-
-@helper ShowLeaf(ICollection<EveFirstMate.Models.invType> items, int depth)
-{
-    var indent = depth.ToString() + "em";
-    
-    <ul class="items">
-        @foreach (var item in items)
-        {
-            <li data-item-typeid="@item.typeID" style="text-indent: @indent">@item.typeName</li>
-        }
-    </ul>
-}*@
-
-<script type="text/html" id="treeLeafList">
-    <li data-bind="text: typeName, style: { textIndent: $parents.length + 'em' }"></li>
+﻿<script type="text/html" id="treeLeafList">
+    <li data-bind="clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+        <span data-bind="text: typeName"></span>
+    </li>
 </script>
 
 <script type="text/html" id="treeNodeList">
-    <li data-bind="click: toggleGroup, clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+    <li data-bind="click: $root.toggleGroup.bind($root, $data), clickBubble: false, style: { textIndent: $parents.length + 'em' }">
         <span data-bind="text: marketGroupName"></span>
         <!--ko if: isOpen-->
             <!--ko ifnot: hasTypes-->
@@ -62,14 +20,3 @@
 
 <ul data-bind="template: { name: 'treeNodeList', foreach: marketGroups }"></ul>
 
-@*<ul>
-    @foreach (var group in Model)
-    {
-        <li data-node-state="closed">
-            @group.marketGroupName
-        </li>
-        <li class="closed">
-            @ShowTree(group.invMarketGroups1, 1)
-        </li>
-    }
-</ul>*@

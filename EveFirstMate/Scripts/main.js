@@ -66,6 +66,7 @@
             return new MarketGroupModel(group);
         }));
         this.selectedTypeId = ko.observable(null).publishOn("selectedTypeId", true);
+        this.openLeafNode = ko.observable();
     };
 
     MarketGroupModel = function (data) {
@@ -76,26 +77,62 @@
         this.isOpen = ko.observable(false);
     };
 
-    ko.utils.extend(MarketGroupModel.prototype, {
-        toggleGroup: function () {
-            if (this.isOpen()) {
-                this.isOpen(false);
+    ko.utils.extend(MarketModel.prototype, {
+        toggleGroup: function (marketGroup) {
+            if (marketGroup.isOpen()) {
+                // if it's open, close it
+                marketGroup.isOpen(false);
             } else {
-                if (this.hasTypes()) {
+                if (marketGroup.hasTypes()) {
                     // show invTypes
-                } else {
-                    // show childMarketGroups
-                    if (this.childMarketGroups() && this.childMarketGroups().length > 0) {
-                        // children already in the array, so just show the list
-                        this.isOpen(true);
+                    if (marketGroup.invTypes() && marketGroup.invTypes().length > 0) {
+                        // already has the items, so just show the list
+                        marketGroup.isOpen(true);
                     } else {
                         // first time this group is being opened
-                        // retrieve the childMarketGroups, then display
+                        // retrieve the invTypes,
+                        // then display the list
+                        $.ajax({
+                            type: "GET",
+                            url: "MarketGroup/GetTypes/",
+                            data: { marketGroupID: marketGroup.marketGroupID() },
+                            context: this,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (data) {
+                                var invTypes = [];
+                                if (data && data.length > 0) {
+                                    ko.utils.arrayForEach(data, function (type) {
+                                        invTypes.push(new TypeModel(type));
+                                    });
+                                }
+                                marketGroup.invTypes(invTypes);
+                                marketGroup.isOpen(true);
+                                // TODO: mark this group as open in $root to keep 
+                                // track of which leaf is open, so that if another
+                                // leaf is opened, it can be closed.
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log(jqXHR);
+                                console.log(textStatus);
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                } else {
+                    // show childMarketGroups
+                    if (marketGroup.childMarketGroups() && marketGroup.childMarketGroups().length > 0) {
+                        // children already in the array, so just show the list
+                        marketGroup.isOpen(true);
+                    } else {
+                        // first time this group is being opened
+                        // retrieve the childMarketGroups,
+                        // then display the list
                         $.ajax({
                             type: "GET",
                             url: "MarketGroup/GetChildGroups/",
-                            data: { marketGroupID: this.marketGroupID() },
-                            context: this,
+                            data: { marketGroupID: marketGroup.marketGroupID() },
+                            context: marketGroup,
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (data) {
@@ -125,103 +162,6 @@
             itemInfoNode = document.getElementById("itemInfo"),
             marketGroupsViewModel,
             marketGroupsNode = document.getElementById("marketGroups");
-
-        // Change the state of the tree node that was clicked on
-        // This changes the class of the sibling <li> tag based on the new state
-        // which shows or hides the node
-        /*$("#marketGroups").on("click", "li[data-node-state]", function (event) {
-            var currentState, nextState;
-
-            if (Modernizr.dataset) {
-                currentState = this.dataset.nodeState;
-                nextState = currentState === "closed" ? "open" : "closed";
-
-                this.dataset.nodeState = nextState;
-            } else {
-                currentState = $(this).attr("data-node-state");
-                nextState = currentState === "closed" ? "open" : "closed";
-
-                $(this).attr("data-node-state", nextState);
-            }
-
-            $(this).next("li").removeClass(currentState).addClass(nextState);
-
-            // don't propogate the event up to parent nodes
-            return false;
-        });
-
-        // Change the state of the leaf node that was clicked on
-        // This requires two extra steps
-        // 1. close any other open leaf nodes
-        // 2. unselect any selected item from another category
-        $("#marketGroups").on("click", "li[data-leaf-state]", function (event) {
-            var currentState, nextState;
-
-            // get the current state, then swap it
-            // close any currently open leaf nodes
-            // set the new state on the leaf that was clicked
-            if (Modernizr.dataset) {
-                currentState = this.dataset.leafState;
-                nextState = currentState === "closed" ? "open" : "closed";
-
-                if (nextState === "open") {
-                    $("#marketGroups li[data-leaf-state=\"open\"]").each(function (index) {
-                        this.dataset.leafState = "closed";
-                        $(this).next("li").removeClass("open").addClass("closed");
-                    });
-                }
-
-                this.dataset.leafState = nextState;
-            } else {
-                currentState = $(this).attr("data-leaf-state");
-                nextState = currentState === "closed" ? "open" : "closed";
-
-                if (nextState === "open") {
-                    $("#marketGroups li[data-leaf-state=\"open\"]").each(function (index) {
-                        $(this).attr("data-leaf-state", "closed");
-                        $(this).next("li").removeClass("open").addClass("closed");
-                    });
-                }
-
-                $(this).attr("data-leaf-state", nextState);
-            }
-
-            // unselect any selected items
-            $("#marketGroups li[data-item-typeid].selected").removeClass("selected");
-
-            // remove the old state from the node and set the new state
-            $(this).next("li").removeClass(currentState).addClass(nextState);
-
-            // don't propogate the event up to parent nodes
-            return false;
-        });
-
-        // When an item is selected, it's published to the knockout-postbox
-        // This also unselects any other item that may have been selected
-        $("#marketGroups").on("click", "li[data-item-typeid]", function (event) {
-            var itemTypeId;
-
-            // Get the item's typeID
-            if (Modernizr.dataset) {
-                itemTypeId = this.dataset.itemTypeid;
-            } else {
-                itemTypeId = $(this).attr("data-item-typeid");
-            }
-
-            // unselect any selected items
-            $("#marketGroups li[data-item-typeid].selected").removeClass("selected");
-
-            // select this item
-            $(this).addClass("selected");
-
-            // publish the typeID to the selectedTypeId topic
-            if (itemTypeId) {
-                ko.postbox.publish("selectedTypeId", itemTypeId);
-            }
-
-            // don't propogate the event up to parent nodes
-            return false;
-        });*/
 
         if (marketGroupsNode) {
             $.ajax({

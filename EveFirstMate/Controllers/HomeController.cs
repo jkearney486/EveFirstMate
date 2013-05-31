@@ -13,10 +13,7 @@ namespace EveFirstMate.Controllers
     {
         public ActionResult Index()
         {
-            EveViewModel viewModel = new EveViewModel();
-            viewModel.marketGroups = Entities.invMarketGroups.Where(x => x.invMarketGroup1 == null && (x.marketGroupName == "Ships" || x.marketGroupName == "Ship Equipment" || x.marketGroupName == "Ship Modifications")).ToList();
-            
-            return View(viewModel);
+            return View();
         }
     }
 }

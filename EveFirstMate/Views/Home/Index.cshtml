@@ -1,12 +1,10 @@
-﻿@model EveFirstMate.ViewModels.EveViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Home";
 }
 
 <section id="items">
     <menu id="marketGroups">
-        @Html.Partial("_MarketGroups", Model.marketGroups)
+        @Html.Partial("_MarketGroups")
     </menu>
     <aside id="itemInfo">
         <div data-bind="with: selectedItem">
