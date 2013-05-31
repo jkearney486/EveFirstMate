@@ -1,11 +1,14 @@
-﻿(function () {
+﻿(function (EVEFIRSTMATE) {
     "use strict";
 
-    var TypeModel, ItemInfoModel;
+    var TypeModel,
+        ItemInfoModel,
+        MarketModel,
+        MarketGroupModel;
 
-    function transformTypeId(typeId) {
+    function transformTypeId(newValue) {
         var cachedItems = this.cachedItems(),
-            itemType;
+            itemType, typeId = newValue;
 
         // Checks the cache to see if the item has already been accessed
         if (cachedItems && cachedItems.length > 0) {
@@ -19,28 +22,30 @@
         if (itemType) {
             this.selectedItem(itemType);
         } else {
-            $.ajax({
-                type: "GET",
-                url: "api/types/" + typeId,
-                data: "",
-                context: this,
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (data) {
-                    // if an item was returned, create a new TypeModel object of it
-                    // then add it to the cache and select it
-                    if (data) {
-                        itemType = new TypeModel(data);
-                        this.cachedItems.push(itemType);
-                        this.selectedItem(itemType);
+            if (newValue) {
+                $.ajax({
+                    type: "GET",
+                    url: "api/types/" + typeId,
+                    data: "",
+                    context: this,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        // if an item was returned, create a new TypeModel object of it
+                        // then add it to the cache and select it
+                        if (data) {
+                            itemType = new TypeModel(data);
+                            this.cachedItems.push(itemType);
+                            this.selectedItem(itemType);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR);
+                        console.log(textStatus);
+                        console.log(errorThrown);
                     }
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(textStatus);
-                    console.log(errorThrown);
-                }
-            });
+                });
+            }
         }
 
         return typeId;
@@ -53,17 +58,78 @@
     ItemInfoModel = function () {
         this.selectedItem = ko.observable();
         this.cachedItems = ko.observableArray([]);
-        this.selectedTypeId = ko.observable().subscribeTo("selectedTypeId", false, transformTypeId.bind(this));
-
+        this.selectedTypeId = ko.observable(null).subscribeTo("selectedTypeId", false, transformTypeId.bind(this));
     };
 
+    MarketModel = function (data) {
+        this.marketGroups = ko.observableArray(ko.utils.arrayMap(data, function (group) {
+            return new MarketGroupModel(group);
+        }));
+        this.selectedTypeId = ko.observable(null).publishOn("selectedTypeId", true);
+    };
+
+    MarketGroupModel = function (data) {
+        ko.mapping.fromJS(data, {}, this);
+
+        this.childMarketGroups = ko.observableArray([]);
+        this.invTypes = ko.observableArray([]);
+        this.isOpen = ko.observable(false);
+    };
+
+    ko.utils.extend(MarketGroupModel.prototype, {
+        toggleGroup: function () {
+            if (this.isOpen()) {
+                this.isOpen(false);
+            } else {
+                if (this.hasTypes()) {
+                    // show invTypes
+                } else {
+                    // show childMarketGroups
+                    if (this.childMarketGroups() && this.childMarketGroups().length > 0) {
+                        // children already in the array, so just show the list
+                        this.isOpen(true);
+                    } else {
+                        // first time this group is being opened
+                        // retrieve the childMarketGroups, then display
+                        $.ajax({
+                            type: "GET",
+                            url: "MarketGroup/GetChildGroups/",
+                            data: { marketGroupID: this.marketGroupID() },
+                            context: this,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (data) {
+                                var childMarketGroups = [];
+                                if (data && data.length > 0) {
+                                    ko.utils.arrayForEach(data, function (group) {
+                                        childMarketGroups.push(new MarketGroupModel(group));
+                                    });
+                                }
+                                this.childMarketGroups(childMarketGroups);
+                                this.isOpen(true);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log(jqXHR);
+                                console.log(textStatus);
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    });
+
     $(function () {
-        var itemsViewModel;
+        var itemsViewModel,
+            itemInfoNode = document.getElementById("itemInfo"),
+            marketGroupsViewModel,
+            marketGroupsNode = document.getElementById("marketGroups");
 
         // Change the state of the tree node that was clicked on
         // This changes the class of the sibling <li> tag based on the new state
         // which shows or hides the node
-        $("#marketGroups").on("click", "li[data-node-state]", function (event) {
+        /*$("#marketGroups").on("click", "li[data-node-state]", function (event) {
             var currentState, nextState;
 
             if (Modernizr.dataset) {
@@ -155,9 +221,30 @@
 
             // don't propogate the event up to parent nodes
             return false;
-        });
+        });*/
 
-        itemsViewModel = new ItemInfoModel();
-        ko.applyBindings(itemsViewModel, document.getElementById("itemInfo"));
+        if (marketGroupsNode) {
+            $.ajax({
+                type: "GET",
+                url: "MarketGroup/GetTopGroups/",
+                data: "",
+                context: this,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    marketGroupsViewModel = new MarketModel(data);
+                    ko.applyBindings(marketGroupsViewModel, marketGroupsNode);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                }
+            });
+        }
+        if (itemInfoNode) {
+            itemsViewModel = new ItemInfoModel();
+            ko.applyBindings(itemsViewModel, itemInfoNode);
+        }
     });
-}());
+}(window.EVEFIRSTMATE));

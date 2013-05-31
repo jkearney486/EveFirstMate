@@ -8,6 +8,8 @@ namespace EveFirstMate.ViewModels
 {
     public class MarketGroupViewModel
     {
+        #region Model
+
         private invMarketGroup _invMarketGroup;
         private invMarketGroup MarketGroup
         {
@@ -22,6 +24,8 @@ namespace EveFirstMate.ViewModels
                 _invMarketGroup = value;
             }
         }
+
+        #endregion // Model
 
         #region invMarketGroup Properties
 
@@ -92,7 +96,7 @@ namespace EveFirstMate.ViewModels
             }
         }
 
-        public List<invMarketGroup> childMarketGroups
+        private List<invMarketGroup> childMarketGroups
         {
             get
             {
@@ -103,7 +107,7 @@ namespace EveFirstMate.ViewModels
                 MarketGroup.invMarketGroups1 = value;
             }
         }
-        public List<invType> invTypes
+        private List<invType> invTypes
         {
             get
             {
@@ -114,7 +118,7 @@ namespace EveFirstMate.ViewModels
                 MarketGroup.invTypes = value;
             }
         }
-        public eveIcon eveIcon
+        private eveIcon eveIcon
         {
             get
             {
@@ -128,6 +132,8 @@ namespace EveFirstMate.ViewModels
 
         #endregion // invMarketGroup Properties
 
+        #region Constructors
+
         public MarketGroupViewModel()
         {
             this.MarketGroup.invMarketGroup1 = null;
@@ -136,7 +142,8 @@ namespace EveFirstMate.ViewModels
         public MarketGroupViewModel(invMarketGroup marketGroup)
         {
             this.MarketGroup = marketGroup;
-            this.MarketGroup.invMarketGroup1 = null;
         }
+
+        #endregion // Constructors
     }
 }

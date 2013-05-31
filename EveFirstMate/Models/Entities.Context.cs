@@ -18,6 +18,7 @@ namespace EveFirstMate.Models
         public EVEEntities()
             : base("name=EVEEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

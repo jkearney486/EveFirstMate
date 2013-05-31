@@ -28,6 +28,13 @@
         <div id="wrapper">
             @RenderBody()
         </div>
+        <script type="text/javascript">
+            (function () {
+                var EVEFIRSTMATE = {};
+
+                window.EVEFIRSTMATE = EVEFIRSTMATE;
+            }());
+        </script>
         @Scripts.Render("~/bundles/main")
         @RenderSection("scripts", required: false)
     </body>

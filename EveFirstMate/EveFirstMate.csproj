@@ -180,6 +180,7 @@
   <ItemGroup>
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\JsonNetResult.cs" />
+    <Compile Include="Controllers\MarketGroupController.cs" />
     <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Models\agtAgent.cs">
       <DependentUpon>Entities.tt</DependentUpon>

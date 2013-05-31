@@ -3036,7 +3036,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EVEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="EVEEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="EVEEntities" p1:LazyLoadingEnabled="false">
           <EntitySet Name="agtAgents" EntityType="EVEModel.agtAgent" />
           <EntitySet Name="agtAgentTypes" EntityType="EVEModel.agtAgentType" />
           <EntitySet Name="chrAncestries" EntityType="EVEModel.chrAncestry" />

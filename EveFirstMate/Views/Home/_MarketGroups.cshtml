@@ -1,6 +1,6 @@
 ﻿@model List<EveFirstMate.Models.invMarketGroup>
 
-@helper ShowTree(ICollection<EveFirstMate.Models.invMarketGroup> groups, int depth)
+@*@helper ShowTree(ICollection<EveFirstMate.Models.invMarketGroup> groups, int depth)
 {
     var indent = depth.ToString() + "em";
     depth++;
@@ -40,9 +40,29 @@
             <li data-item-typeid="@item.typeID" style="text-indent: @indent">@item.typeName</li>
         }
     </ul>
-}
+}*@
 
-<ul>
+<script type="text/html" id="treeLeafList">
+    <li data-bind="text: typeName, style: { textIndent: $parents.length + 'em' }"></li>
+</script>
+
+<script type="text/html" id="treeNodeList">
+    <li data-bind="click: toggleGroup, clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+        <span data-bind="text: marketGroupName"></span>
+        <!--ko if: isOpen-->
+            <!--ko ifnot: hasTypes-->
+                <ul data-bind="template: { name: 'treeNodeList', foreach: childMarketGroups }"></ul>
+            <!--/ko-->
+            <!--ko if: hasTypes-->
+                <ul class="items" data-bind="template: { name: 'treeLeafList', foreach: invTypes }"></ul>
+            <!--/ko-->
+        <!--/ko-->
+    </li>
+</script>
+
+<ul data-bind="template: { name: 'treeNodeList', foreach: marketGroups }"></ul>
+
+@*<ul>
     @foreach (var group in Model)
     {
         <li data-node-state="closed">
@@ -52,4 +72,4 @@
             @ShowTree(group.invMarketGroups1, 1)
         </li>
     }
-</ul>
+</ul>*@
