@@ -29,7 +29,7 @@ namespace EveFirstMate
             // Global styles
             bundles.Add(new StyleBundle("~/Content/css").Include(
                                     "~/Content/normalize.css",
-                                    "~/Content/themes/smoothness-mod/jquery-ui-1.10.2.css",
+                                    "~/Content/themes/smoothness-mod/jquery-ui-{version}.css",
                                     "~/Content/main.css"));
         }
     }
