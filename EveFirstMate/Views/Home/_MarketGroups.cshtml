@@ -1,5 +1,8 @@
 ﻿<script type="text/html" id="treeLeafList">
-    <li data-bind="clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+    <li data-bind="click: $root.selectItem.bind($root, $data),
+                   clickBubble: false,
+                   style: { textIndent: $parents.length + 'em' },
+                   css: { selected: $root.selectedItem() === $data }">
         <span data-bind="text: typeName"></span>
     </li>
 </script>

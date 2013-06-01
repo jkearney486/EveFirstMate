@@ -6,67 +6,20 @@
         MarketModel,
         MarketGroupModel;
 
-    function transformTypeId(newValue) {
-        var cachedItems = this.cachedItems(),
-            itemType, typeId = newValue;
-
-        // Checks the cache to see if the item has already been accessed
-        if (cachedItems && cachedItems.length > 0) {
-            itemType = ko.utils.arrayFirst(cachedItems, function (item) {
-                return item.typeID() === typeId;
-            });
-        }
-
-        // if the item was found in the cache, make it the selected item
-        // otherwise, make a call to the api to find it
-        if (itemType) {
-            this.selectedItem(itemType);
-        } else {
-            if (newValue) {
-                $.ajax({
-                    type: "GET",
-                    url: "api/types/" + typeId,
-                    data: "",
-                    context: this,
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data) {
-                        // if an item was returned, create a new TypeModel object of it
-                        // then add it to the cache and select it
-                        if (data) {
-                            itemType = new TypeModel(data);
-                            this.cachedItems.push(itemType);
-                            this.selectedItem(itemType);
-                        }
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        console.log(jqXHR);
-                        console.log(textStatus);
-                        console.log(errorThrown);
-                    }
-                });
-            }
-        }
-
-        return typeId;
-    }
-
     TypeModel = function (data) {
         ko.mapping.fromJS(data, {}, this);
     };
 
     ItemInfoModel = function () {
-        this.selectedItem = ko.observable();
-        this.cachedItems = ko.observableArray([]);
-        this.selectedTypeId = ko.observable(null).subscribeTo("selectedTypeId", false, transformTypeId.bind(this));
+        this.selectedItem = ko.observable().subscribeTo("selectedItem", false);
     };
 
     MarketModel = function (data) {
         this.marketGroups = ko.observableArray(ko.utils.arrayMap(data, function (group) {
             return new MarketGroupModel(group);
         }));
-        this.selectedTypeId = ko.observable(null).publishOn("selectedTypeId", true);
-        this.openLeafNode = ko.observable();
+        this.selectedItem = ko.observable(null).publishOn("selectedItem", true);
+        this.openLeafNode = ko.observable(null);
     };
 
     MarketGroupModel = function (data) {
@@ -82,11 +35,24 @@
             if (marketGroup.isOpen()) {
                 // if it's open, close it
                 marketGroup.isOpen(false);
+
+                // if this was a leaf node, remove it from $root.openLeafNode
+                if (marketGroup === this.openLeafNode()) {
+                    this.openLeafNode(null);
+                }
             } else {
                 if (marketGroup.hasTypes()) {
                     // show invTypes
                     if (marketGroup.invTypes() && marketGroup.invTypes().length > 0) {
                         // already has the items, so just show the list
+
+                        // if there's a leaf node that is currently open, close it
+                        if (this.openLeafNode()) {
+                            this.openLeafNode().isOpen(false);
+                        }
+
+                        // save this group in $root, so that it can be closed
+                        this.openLeafNode(marketGroup);
                         marketGroup.isOpen(true);
                     } else {
                         // first time this group is being opened
@@ -100,17 +66,23 @@
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (data) {
-                                var invTypes = [];
+                                var invTypes = [],
+                                    openLeafNode = this.openLeafNode();
                                 if (data && data.length > 0) {
                                     ko.utils.arrayForEach(data, function (type) {
                                         invTypes.push(new TypeModel(type));
                                     });
                                 }
                                 marketGroup.invTypes(invTypes);
+
+                                // if there's a leaf node that is currently open, close it
+                                if (openLeafNode) {
+                                    openLeafNode.isOpen(false);
+                                }
+
+                                // save this group in $root, so that it can be closed
+                                this.openLeafNode(marketGroup);
                                 marketGroup.isOpen(true);
-                                // TODO: mark this group as open in $root to keep 
-                                // track of which leaf is open, so that if another
-                                // leaf is opened, it can be closed.
                             },
                             error: function (jqXHR, textStatus, errorThrown) {
                                 console.log(jqXHR);
@@ -154,6 +126,9 @@
                     }
                 }
             }
+        },
+        selectItem: function (item) {
+            this.selectedItem(item);
         }
     });
 
@@ -187,4 +162,5 @@
             ko.applyBindings(itemsViewModel, itemInfoNode);
         }
     });
+
 }(window.EVEFIRSTMATE));
