@@ -21,6 +21,15 @@ namespace EveFirstMate
                         "~/Scripts/knockout/knockout-postbox.js",
                         "~/Scripts/main.js"));
 
+            // Global scripts w/ ko 3.0.0 beta
+            bundles.Add(new ScriptBundle("~/bundles/beta").Include(
+                        "~/Scripts/jquery/jquery-{version}.js",
+                        "~/Scripts/jquery/jquery-ui-{version}.js",
+                        "~/Scripts/knockout/knockout-{version}beta.debug.js",
+                        "~/Scripts/knockout/knockout.mapping.debug.js",
+                        "~/Scripts/knockout/knockout-postbox.js",
+                        "~/Scripts/main.js"));
+
             // Knockout & Knockout-mapping
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                                     "~/Scripts/knockout/knockout-{version}.debug.js",

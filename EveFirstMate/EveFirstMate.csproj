@@ -487,6 +487,8 @@
     <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout\knockout-2.2.1.js" />
+    <Content Include="Scripts\knockout\knockout-3.0.0beta.debug.js" />
+    <Content Include="Scripts\knockout\knockout-3.0.0beta.js" />
     <Content Include="Scripts\knockout\knockout-postbox.js" />
     <Content Include="Scripts\knockout\knockout-postbox.min.js" />
     <Content Include="Scripts\knockout\knockout.mapping.debug.js" />
