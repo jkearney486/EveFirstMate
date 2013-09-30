@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<section id="items">
+    <menu id="marketGroups">
+        @Html.Partial("_MarketGroups")
+    </menu>
+    <aside id="itemInfo">
+        <div data-bind="with: selectedItem">
+            <h3 data-bind="text: typeName"></h3>
+            <p data-bind="text: description"></p>
+        </div>
+    </aside>
+</section>
+<section id="fitting">
+    <div>
+        <span>This is where the ship goes.</span>
+    </div>
+</section>

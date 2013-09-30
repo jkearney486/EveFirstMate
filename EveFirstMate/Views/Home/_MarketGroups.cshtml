@@ -1,0 +1,25 @@
+﻿<script type="text/html" id="treeLeafList">
+    <li data-bind="click: $root.selectItem.bind($root, $data),
+                   clickBubble: false,
+                   style: { textIndent: $parents.length + 'em' },
+                   css: { selected: $root.selectedItem() === $data }">
+        <span data-bind="text: typeName"></span>
+    </li>
+</script>
+
+<script type="text/html" id="treeNodeList">
+    <li data-bind="click: $root.toggleGroup.bind($root, $data), clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+        <span data-bind="text: marketGroupName"></span>
+        <!--ko if: isOpen-->
+            <!--ko ifnot: hasTypes-->
+                <ul data-bind="template: { name: 'treeNodeList', foreach: childMarketGroups }"></ul>
+            <!--/ko-->
+            <!--ko if: hasTypes-->
+                <ul class="items" data-bind="template: { name: 'treeLeafList', foreach: invTypes }"></ul>
+            <!--/ko-->
+        <!--/ko-->
+    </li>
+</script>
+
+<ul data-bind="template: { name: 'treeNodeList', foreach: marketGroups }"></ul>
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c311548e49a54d87a53b421bce67a8d2" Name="Diagram1" ZoomLevel="25">
+        <EntityTypeShape EntityType="EVEDBModel.agtAgent" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.agtAgentType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.agtResearchAgent" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrAncestry" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrAttribute" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrBloodline" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrFaction" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrRace" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpActivity" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationDivision" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationResearchField" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporation" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationTrade" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCDivision" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtCategory" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtCertificate" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtClass" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtRecommendation" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtRelationship" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeCategory" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeType" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmEffect" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmTypeAttribute" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmTypeEffect" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.eveUnit" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invBlueprintType" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invCategory" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invContrabandType" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResourcePurpos" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResource" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invFlag" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invGroup" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invItem" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMarketGroup" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMetaGroup" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMetaType" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invName" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invPosition" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invTypeMaterial" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invTypeReaction" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invType" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invUniqueName" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapCelestialStatistic" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapConstellationJump" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapConstellation" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapDenormalize" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapJump" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLandmark" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLocationScene" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLocationWormholeClass" Width="1.5" PointX="6.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapRegionJump" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapRegion" Width="1.5" PointX="16.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystemJump" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystem" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapUniverse" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematic" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsPinMap" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsTypeMap" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramActivity" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLine" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineStation" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerCategory" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerGroup" Width="1.5" PointX="4.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineType" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramInstallationTypeContent" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramTypeRequirement" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staOperation" Width="1.5" PointX="22.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staOperationService" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staService" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staStation" Width="1.5" PointX="10.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staStationType" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.translationTable" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslationColumn" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslationLanguage" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslation" Width="1.5" PointX="6.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.warCombatZone" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.warCombatZoneSystem" Width="1.5" PointX="24.75" PointY="12.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
