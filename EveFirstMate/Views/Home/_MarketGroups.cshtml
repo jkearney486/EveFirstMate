@@ -1,14 +1,12 @@
 ﻿<script type="text/html" id="treeLeafList">
-    <li data-bind="click: $root.selectItem.bind($root, $data),
-                   clickBubble: false,
-                   style: { textIndent: $parents.length + 'em' },
-                   css: { selected: $root.selectedItem() === $data }">
+    <li data-bind="style: { textIndent: $parents.length + 'em' },
+                   css: { selected: $root.selectedItem() === $data }" data-click="selectItem">
         <span data-bind="text: typeName"></span>
     </li>
 </script>
 
 <script type="text/html" id="treeNodeList">
-    <li data-bind="click: $root.toggleGroup.bind($root, $data), clickBubble: false, style: { textIndent: $parents.length + 'em' }">
+    <li data-bind="style: { textIndent: $parents.length + 'em' }" data-click="toggleGroup">
         <span data-bind="text: marketGroupName"></span>
         <!--ko if: isOpen-->
             <!--ko ifnot: hasTypes-->
@@ -21,5 +19,4 @@
     </li>
 </script>
 
-<ul data-bind="template: { name: 'treeNodeList', foreach: marketGroups }"></ul>
-
+<ul data-bind="delegatedHandler: 'click', template: { name: 'treeNodeList', foreach: marketGroups }"></ul>

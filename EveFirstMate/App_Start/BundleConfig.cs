@@ -18,6 +18,7 @@ namespace EveFirstMate
                         "~/Scripts/knockout-{version}.debug.js",
                         "~/Scripts/knockout.mapping.debug.js",
                         "~/Scripts/knockout-postbox.js",
+                        "~/Scripts/knockout-delegatedEvents.js",
                         "~/Scripts/main.js"));
 
             // Global scripts w/ ko 3.0.0 beta
@@ -27,6 +28,7 @@ namespace EveFirstMate
                         "~/Scripts/knockout-{version}beta.debug.js",
                         "~/Scripts/knockout.mapping.debug.js",
                         "~/Scripts/knockout-postbox.js",
+                        "~/Scripts/knockout-delegatedEvents.js",
                         "~/Scripts/main.js"));
 
             // Knockout & Knockout-mapping
