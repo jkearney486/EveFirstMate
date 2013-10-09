@@ -1,13 +1,12 @@
 ﻿<script type="text/html" id="treeLeafList">
-    <li data-bind="style: { textIndent: $parents.length + 'em' },
-                   css: { selected: $root.selectedItem() === $data }" data-click="selectItem">
-        <span data-bind="text: typeName"></span>
+    <li data-bind="css: { selected: $root.selectedItem() === $data }" data-click="selectItem">
+        <span data-bind="text: typeName, style: { paddingLeft: $parents.length + 'em' }"></span>
     </li>
 </script>
 
 <script type="text/html" id="treeNodeList">
-    <li data-bind="style: { textIndent: $parents.length + 'em' }" data-click="toggleGroup">
-        <span data-bind="text: marketGroupName"></span>
+    <li data-click="toggleGroup">
+        <span data-bind="text: marketGroupName, style: { paddingLeft: $parents.length + 'em' }"></span>
         <!--ko if: isOpen-->
             <!--ko ifnot: hasTypes-->
                 <ul data-bind="template: { name: 'treeNodeList', foreach: childMarketGroups }"></ul>
