@@ -1,14 +1,28 @@
 ﻿(function (EVEFIRSTMATE) {
     "use strict";
 
-    var TypeModel,
+    var TypeMenuModel,
         ItemInfoModel,
         MarketModel,
         MarketGroupModel;
 
-    TypeModel = function (data) {
-        ko.mapping.fromJS(data, {}, this);
+    TypeMenuModel = function (data) {
+        this.typeID        = ko.observable();
+        this.typeName      = ko.observable();
+        this.description   = ko.observable();
+        this.marketGroupID = ko.observable();
+
+        this.update(data);
     };
+
+    ko.utils.extend(TypeMenuModel.prototype, {
+        update: function (data) {
+            this.typeID((data && data.typeID) || null);
+            this.typeName((data && data.typeID) || null);
+            this.description((data && data.typeID) || null);
+            this.marketGroupID((data && data.typeID) || null);
+        }
+    });
 
     ItemInfoModel = function () {
         this.selectedItem = ko.observable().subscribeTo("selectedItem", false);
@@ -23,12 +37,26 @@
     };
 
     MarketGroupModel = function (data) {
-        ko.mapping.fromJS(data, {}, this);
+        this.marketGroupID      = ko.observable();
+        this.marketGroupName    = ko.observable();
+        this.description        = ko.observable();
+        this.hasTypes           = ko.observable();
+        this.childMarketGroups  = ko.observableArray([]);
+        this.invTypes           = ko.observableArray([]);
+        this.isOpen             = ko.observable();
 
-        this.childMarketGroups = ko.observableArray([]);
-        this.invTypes = ko.observableArray([]);
-        this.isOpen = ko.observable(false);
+        this.update(data);
     };
+
+    ko.utils.extend(MarketGroupModel.prototype, {
+        update: function (data) {
+            this.marketGroupID((data && data.marketGroupID) || null);
+            this.marketGroupName((data && data.marketGroupName) || null);
+            this.description((data && data.description) || null);
+            this.hasTypes((data && data.hasTypes) || null);
+            this.isOpen((data && data.isOpen) || false);
+        }
+    });
 
     ko.utils.extend(MarketModel.prototype, {
         toggleGroup: function (marketGroup) {
@@ -60,7 +88,7 @@
                         // then display the list
                         $.ajax({
                             type: "GET",
-                            url: "MarketGroup/GetTypes/",
+                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetTypes/",
                             data: { marketGroupID: marketGroup.marketGroupID() },
                             context: this,
                             contentType: "application/json; charset=utf-8",
@@ -102,7 +130,7 @@
                         // then display the list
                         $.ajax({
                             type: "GET",
-                            url: "MarketGroup/GetChildGroups/",
+                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetChildGroups/",
                             data: { marketGroupID: marketGroup.marketGroupID() },
                             context: marketGroup,
                             contentType: "application/json; charset=utf-8",
@@ -141,7 +169,7 @@
         if (marketGroupsNode) {
             $.ajax({
                 type: "GET",
-                url: "MarketGroup/GetTopGroups/",
+                url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetTopGroups/",
                 data: "",
                 context: this,
                 contentType: "application/json; charset=utf-8",

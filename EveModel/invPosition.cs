@@ -21,5 +21,7 @@ namespace EveModel
         public Nullable<float> yaw { get; set; }
         public Nullable<float> pitch { get; set; }
         public Nullable<float> roll { get; set; }
+    
+        public virtual invItem invItem { get; set; }
     }
 }

@@ -14,10 +14,21 @@ namespace EveModel
     
     public partial class ramActivity
     {
+        public ramActivity()
+        {
+            this.ramAssemblyLines = new HashSet<ramAssemblyLine>();
+            this.ramAssemblyLineTypes = new HashSet<ramAssemblyLineType>();
+            this.ramTypeRequirements = new HashSet<ramTypeRequirement>();
+        }
+    
         public byte activityID { get; set; }
         public string activityName { get; set; }
         public string iconNo { get; set; }
         public string description { get; set; }
         public Nullable<bool> published { get; set; }
+    
+        public virtual ICollection<ramAssemblyLine> ramAssemblyLines { get; set; }
+        public virtual ICollection<ramAssemblyLineType> ramAssemblyLineTypes { get; set; }
+        public virtual ICollection<ramTypeRequirement> ramTypeRequirements { get; set; }
     }
 }

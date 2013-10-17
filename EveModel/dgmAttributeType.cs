@@ -14,6 +14,19 @@ namespace EveModel
     
     public partial class dgmAttributeType
     {
+        public dgmAttributeType()
+        {
+            this.dgmEffects = new HashSet<dgmEffect>();
+            this.dgmEffects1 = new HashSet<dgmEffect>();
+            this.dgmEffects2 = new HashSet<dgmEffect>();
+            this.dgmEffects3 = new HashSet<dgmEffect>();
+            this.dgmEffects4 = new HashSet<dgmEffect>();
+            this.dgmEffects5 = new HashSet<dgmEffect>();
+            this.dgmEffects6 = new HashSet<dgmEffect>();
+            this.dgmEffects7 = new HashSet<dgmEffect>();
+            this.dgmTypeAttributes = new HashSet<dgmTypeAttribute>();
+        }
+    
         public short attributeID { get; set; }
         public string attributeName { get; set; }
         public string description { get; set; }
@@ -25,5 +38,17 @@ namespace EveModel
         public Nullable<bool> stackable { get; set; }
         public Nullable<bool> highIsGood { get; set; }
         public Nullable<byte> categoryID { get; set; }
+    
+        public virtual dgmAttributeCategory dgmAttributeCategory { get; set; }
+        public virtual eveUnit eveUnit { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects1 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects2 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects3 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects4 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects5 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects6 { get; set; }
+        public virtual ICollection<dgmEffect> dgmEffects7 { get; set; }
+        public virtual ICollection<dgmTypeAttribute> dgmTypeAttributes { get; set; }
     }
 }

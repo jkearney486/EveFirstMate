@@ -14,6 +14,11 @@ namespace EveModel
     
     public partial class dgmEffect
     {
+        public dgmEffect()
+        {
+            this.dgmTypeEffects = new HashSet<dgmTypeEffect>();
+        }
+    
         public short effectID { get; set; }
         public string effectName { get; set; }
         public Nullable<short> effectCategory { get; set; }
@@ -41,5 +46,15 @@ namespace EveModel
         public Nullable<short> npcUsageChanceAttributeID { get; set; }
         public Nullable<short> npcActivationChanceAttributeID { get; set; }
         public Nullable<short> fittingUsageChanceAttributeID { get; set; }
+    
+        public virtual dgmAttributeType dgmAttributeType { get; set; }
+        public virtual dgmAttributeType dgmAttributeType1 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType2 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType3 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType4 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType5 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType6 { get; set; }
+        public virtual dgmAttributeType dgmAttributeType7 { get; set; }
+        public virtual ICollection<dgmTypeEffect> dgmTypeEffects { get; set; }
     }
 }

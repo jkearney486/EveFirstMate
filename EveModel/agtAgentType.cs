@@ -14,7 +14,14 @@ namespace EveModel
     
     public partial class agtAgentType
     {
+        public agtAgentType()
+        {
+            this.agtAgents = new HashSet<agtAgent>();
+        }
+    
         public int agentTypeID { get; set; }
         public string agentType { get; set; }
+    
+        public virtual ICollection<agtAgent> agtAgents { get; set; }
     }
 }

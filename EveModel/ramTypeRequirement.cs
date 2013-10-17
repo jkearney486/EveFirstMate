@@ -20,5 +20,8 @@ namespace EveModel
         public Nullable<int> quantity { get; set; }
         public Nullable<double> damagePerJob { get; set; }
         public Nullable<bool> recycle { get; set; }
+    
+        public virtual invType invType { get; set; }
+        public virtual ramActivity ramActivity { get; set; }
     }
 }

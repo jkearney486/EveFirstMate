@@ -24,5 +24,7 @@ namespace EveModel
         public Nullable<double> radius { get; set; }
         public Nullable<int> iconID { get; set; }
         public Nullable<byte> importance { get; set; }
+    
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
     }
 }

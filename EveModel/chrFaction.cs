@@ -14,6 +14,15 @@ namespace EveModel
     
     public partial class chrFaction
     {
+        public chrFaction()
+        {
+            this.invContrabandTypes = new HashSet<invContrabandType>();
+            this.invControlTowerResources = new HashSet<invControlTowerResource>();
+            this.mapConstellations = new HashSet<mapConstellation>();
+            this.mapRegions = new HashSet<mapRegion>();
+            this.mapSolarSystems = new HashSet<mapSolarSystem>();
+        }
+    
         public int factionID { get; set; }
         public string factionName { get; set; }
         public string description { get; set; }
@@ -25,5 +34,14 @@ namespace EveModel
         public Nullable<short> stationSystemCount { get; set; }
         public Nullable<int> militiaCorporationID { get; set; }
         public Nullable<int> iconID { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual crpNPCCorporation crpNPCCorporation1 { get; set; }
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
+        public virtual ICollection<invContrabandType> invContrabandTypes { get; set; }
+        public virtual ICollection<invControlTowerResource> invControlTowerResources { get; set; }
+        public virtual ICollection<mapConstellation> mapConstellations { get; set; }
+        public virtual ICollection<mapRegion> mapRegions { get; set; }
+        public virtual ICollection<mapSolarSystem> mapSolarSystems { get; set; }
     }
 }

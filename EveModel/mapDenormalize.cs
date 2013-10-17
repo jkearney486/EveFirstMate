@@ -29,5 +29,11 @@ namespace EveModel
         public Nullable<double> security { get; set; }
         public Nullable<byte> celestialIndex { get; set; }
         public Nullable<byte> orbitIndex { get; set; }
+    
+        public virtual invGroup invGroup { get; set; }
+        public virtual invType invType { get; set; }
+        public virtual mapConstellation mapConstellation { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
     }
 }

@@ -17,5 +17,8 @@ namespace EveModel
         public int corporationID { get; set; }
         public byte divisionID { get; set; }
         public Nullable<byte> size { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual crpNPCDivision crpNPCDivision { get; set; }
     }
 }

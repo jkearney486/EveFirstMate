@@ -20,5 +20,8 @@ namespace EveModel
         public long locationID { get; set; }
         public short flagID { get; set; }
         public int quantity { get; set; }
+    
+        public virtual invName invName { get; set; }
+        public virtual invPosition invPosition { get; set; }
     }
 }

@@ -27,5 +27,9 @@ namespace EveModel
         public Nullable<short> materialModifier { get; set; }
         public Nullable<short> wasteFactor { get; set; }
         public Nullable<int> maxProductionLimit { get; set; }
+    
+        public virtual invType invType { get; set; }
+        public virtual invType invType1 { get; set; }
+        public virtual invType invType2 { get; set; }
     }
 }

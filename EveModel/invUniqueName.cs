@@ -17,5 +17,7 @@ namespace EveModel
         public int itemID { get; set; }
         public string itemName { get; set; }
         public Nullable<int> groupID { get; set; }
+    
+        public virtual invGroup invGroup { get; set; }
     }
 }

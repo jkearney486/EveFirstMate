@@ -52,9 +52,6 @@
     <Compile Include="agtAgentType.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="agtResearchAgent.cs">
-      <DependentUpon>Entities.tt</DependentUpon>
-    </Compile>
     <Compile Include="chrAncestry.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -77,12 +74,6 @@
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="crpNPCCorporationDivision.cs">
-      <DependentUpon>Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="crpNPCCorporationResearchField.cs">
-      <DependentUpon>Entities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="crpNPCCorporationTrade.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="crpNPCDivision.cs">
@@ -216,9 +207,6 @@
     <Compile Include="mapRegion.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="mapRegionJump.cs">
-      <DependentUpon>Entities.tt</DependentUpon>
-    </Compile>
     <Compile Include="mapSolarSystem.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -228,7 +216,7 @@
     <Compile Include="mapUniverse.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ParentMarketGroupMenuModel.cs" />
+    <Compile Include="Models\MarketGroupMenuModel.cs" />
     <Compile Include="Models\TypeMenuModel.cs" />
     <Compile Include="planetSchematic.cs">
       <DependentUpon>Entities.tt</DependentUpon>
@@ -267,9 +255,6 @@
     <Compile Include="staOperation.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
-    <Compile Include="staOperationService.cs">
-      <DependentUpon>Entities.tt</DependentUpon>
-    </Compile>
     <Compile Include="staService.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
@@ -299,13 +284,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Entities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Entities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Entities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Entities.edmx</DependentUpon>

@@ -14,6 +14,14 @@ namespace EveModel
     
     public partial class invGroup
     {
+        public invGroup()
+        {
+            this.invTypes = new HashSet<invType>();
+            this.invUniqueNames = new HashSet<invUniqueName>();
+            this.mapDenormalizes = new HashSet<mapDenormalize>();
+            this.ramAssemblyLineTypeDetailPerGroups = new HashSet<ramAssemblyLineTypeDetailPerGroup>();
+        }
+    
         public int groupID { get; set; }
         public Nullable<int> categoryID { get; set; }
         public string groupName { get; set; }
@@ -26,5 +34,11 @@ namespace EveModel
         public Nullable<bool> anchorable { get; set; }
         public Nullable<bool> fittableNonSingleton { get; set; }
         public Nullable<bool> published { get; set; }
+    
+        public virtual invCategory invCategory { get; set; }
+        public virtual ICollection<invType> invTypes { get; set; }
+        public virtual ICollection<invUniqueName> invUniqueNames { get; set; }
+        public virtual ICollection<mapDenormalize> mapDenormalizes { get; set; }
+        public virtual ICollection<ramAssemblyLineTypeDetailPerGroup> ramAssemblyLineTypeDetailPerGroups { get; set; }
     }
 }

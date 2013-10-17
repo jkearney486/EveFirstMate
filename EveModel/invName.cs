@@ -16,5 +16,7 @@ namespace EveModel
     {
         public long itemID { get; set; }
         public string itemName { get; set; }
+    
+        public virtual invItem invItem { get; set; }
     }
 }

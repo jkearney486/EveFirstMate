@@ -18,5 +18,8 @@ namespace EveModel
         public int groupID { get; set; }
         public Nullable<double> timeMultiplier { get; set; }
         public Nullable<double> materialMultiplier { get; set; }
+    
+        public virtual invGroup invGroup { get; set; }
+        public virtual ramAssemblyLineType ramAssemblyLineType { get; set; }
     }
 }

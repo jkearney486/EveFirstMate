@@ -21,6 +21,7 @@ namespace EveModel.DAC
                                 mg.marketGroupName == "Drones" ||
                                 mg.marketGroupName == "Ship Modifications" ||
                                 mg.marketGroupName == "Ammunition & Charges")
+                          orderby mg.marketGroupName
                           select new MarketGroupMenuModel
                           {
                               marketGroupID = mg.marketGroupID,
@@ -28,7 +29,7 @@ namespace EveModel.DAC
                               description = mg.description,
                               hasTypes = mg.hasTypes
                           };
-                return top.OrderBy(x => x.marketGroupName).ToList();
+                return top.ToList();
             }
         }
 
@@ -38,6 +39,7 @@ namespace EveModel.DAC
             {
                 var children = from mg in entities.invMarketGroups
                                where mg.parentGroupID == marketGroupID
+                               orderby mg.marketGroupName
                                select new MarketGroupMenuModel
                                {
                                    marketGroupID = mg.marketGroupID,
@@ -45,7 +47,7 @@ namespace EveModel.DAC
                                    description = mg.description,
                                    hasTypes = mg.hasTypes
                                };
-                return children.OrderBy(x => x.marketGroupName).ToList();
+                return children.ToList();
             }
         }
     }

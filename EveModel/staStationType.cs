@@ -14,6 +14,11 @@ namespace EveModel
     
     public partial class staStationType
     {
+        public staStationType()
+        {
+            this.ramAssemblyLineStations = new HashSet<ramAssemblyLineStation>();
+        }
+    
         public int stationTypeID { get; set; }
         public Nullable<double> dockEntryX { get; set; }
         public Nullable<double> dockEntryY { get; set; }
@@ -25,5 +30,8 @@ namespace EveModel
         public Nullable<byte> officeSlots { get; set; }
         public Nullable<double> reprocessingEfficiency { get; set; }
         public Nullable<bool> conquerable { get; set; }
+    
+        public virtual invType invType { get; set; }
+        public virtual ICollection<ramAssemblyLineStation> ramAssemblyLineStations { get; set; }
     }
 }

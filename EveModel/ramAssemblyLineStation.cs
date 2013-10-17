@@ -21,5 +21,12 @@ namespace EveModel
         public Nullable<int> ownerID { get; set; }
         public Nullable<int> solarSystemID { get; set; }
         public Nullable<int> regionID { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
+        public virtual ramAssemblyLineType ramAssemblyLineType { get; set; }
+        public virtual staStation staStation { get; set; }
+        public virtual staStationType staStationType { get; set; }
     }
 }

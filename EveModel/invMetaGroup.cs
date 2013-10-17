@@ -14,9 +14,16 @@ namespace EveModel
     
     public partial class invMetaGroup
     {
+        public invMetaGroup()
+        {
+            this.invMetaTypes = new HashSet<invMetaType>();
+        }
+    
         public short metaGroupID { get; set; }
         public string metaGroupName { get; set; }
         public string description { get; set; }
         public Nullable<int> iconID { get; set; }
+    
+        public virtual ICollection<invMetaType> invMetaTypes { get; set; }
     }
 }

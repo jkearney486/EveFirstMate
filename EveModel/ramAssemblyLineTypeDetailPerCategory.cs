@@ -18,5 +18,8 @@ namespace EveModel
         public int categoryID { get; set; }
         public Nullable<double> timeMultiplier { get; set; }
         public Nullable<double> materialMultiplier { get; set; }
+    
+        public virtual invCategory invCategory { get; set; }
+        public virtual ramAssemblyLineType ramAssemblyLineType { get; set; }
     }
 }

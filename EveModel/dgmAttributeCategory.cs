@@ -14,8 +14,15 @@ namespace EveModel
     
     public partial class dgmAttributeCategory
     {
+        public dgmAttributeCategory()
+        {
+            this.dgmAttributeTypes = new HashSet<dgmAttributeType>();
+        }
+    
         public byte categoryID { get; set; }
         public string categoryName { get; set; }
         public string categoryDescription { get; set; }
+    
+        public virtual ICollection<dgmAttributeType> dgmAttributeTypes { get; set; }
     }
 }

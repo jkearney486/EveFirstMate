@@ -14,8 +14,15 @@ namespace EveModel
     
     public partial class crpActivity
     {
+        public crpActivity()
+        {
+            this.staOperations = new HashSet<staOperation>();
+        }
+    
         public byte activityID { get; set; }
         public string activityName { get; set; }
         public string description { get; set; }
+    
+        public virtual ICollection<staOperation> staOperations { get; set; }
     }
 }

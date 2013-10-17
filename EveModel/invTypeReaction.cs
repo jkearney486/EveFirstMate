@@ -18,5 +18,7 @@ namespace EveModel
         public bool input { get; set; }
         public int typeID { get; set; }
         public Nullable<short> quantity { get; set; }
+    
+        public virtual invType invType { get; set; }
     }
 }

@@ -17,5 +17,9 @@ namespace EveModel
         public int typeID { get; set; }
         public Nullable<int> parentTypeID { get; set; }
         public Nullable<short> metaGroupID { get; set; }
+    
+        public virtual invMetaGroup invMetaGroup { get; set; }
+        public virtual invType invType { get; set; }
+        public virtual invType invType1 { get; set; }
     }
 }

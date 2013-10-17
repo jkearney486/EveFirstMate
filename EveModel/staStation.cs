@@ -14,6 +14,12 @@ namespace EveModel
     
     public partial class staStation
     {
+        public staStation()
+        {
+            this.ramAssemblyLines = new HashSet<ramAssemblyLine>();
+            this.ramAssemblyLineStations = new HashSet<ramAssemblyLineStation>();
+        }
+    
         public int stationID { get; set; }
         public Nullable<short> security { get; set; }
         public Nullable<double> dockingCostPerVolume { get; set; }
@@ -32,5 +38,13 @@ namespace EveModel
         public Nullable<double> reprocessingEfficiency { get; set; }
         public Nullable<double> reprocessingStationsTake { get; set; }
         public Nullable<byte> reprocessingHangarFlag { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual mapConstellation mapConstellation { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
+        public virtual ICollection<ramAssemblyLine> ramAssemblyLines { get; set; }
+        public virtual ICollection<ramAssemblyLineStation> ramAssemblyLineStations { get; set; }
+        public virtual staOperation staOperation { get; set; }
     }
 }

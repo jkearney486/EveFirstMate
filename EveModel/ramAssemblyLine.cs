@@ -31,5 +31,10 @@ namespace EveModel
         public Nullable<double> maximumCorpSecurity { get; set; }
         public Nullable<int> ownerID { get; set; }
         public Nullable<byte> activityID { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual ramActivity ramActivity { get; set; }
+        public virtual ramAssemblyLineType ramAssemblyLineType { get; set; }
+        public virtual staStation staStation { get; set; }
     }
 }

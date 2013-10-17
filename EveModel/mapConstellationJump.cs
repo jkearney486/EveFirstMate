@@ -18,5 +18,10 @@ namespace EveModel
         public int fromConstellationID { get; set; }
         public int toConstellationID { get; set; }
         public Nullable<int> toRegionID { get; set; }
+    
+        public virtual mapConstellation mapConstellation { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual mapConstellation mapConstellation1 { get; set; }
+        public virtual mapRegion mapRegion1 { get; set; }
     }
 }

@@ -14,6 +14,17 @@ namespace EveModel
     
     public partial class mapConstellation
     {
+        public mapConstellation()
+        {
+            this.mapConstellationJumps = new HashSet<mapConstellationJump>();
+            this.mapConstellationJumps1 = new HashSet<mapConstellationJump>();
+            this.mapDenormalizes = new HashSet<mapDenormalize>();
+            this.mapSolarSystemJumps = new HashSet<mapSolarSystemJump>();
+            this.mapSolarSystemJumps1 = new HashSet<mapSolarSystemJump>();
+            this.mapSolarSystems = new HashSet<mapSolarSystem>();
+            this.staStations = new HashSet<staStation>();
+        }
+    
         public Nullable<int> regionID { get; set; }
         public int constellationID { get; set; }
         public string constellationName { get; set; }
@@ -28,5 +39,15 @@ namespace EveModel
         public Nullable<double> zMax { get; set; }
         public Nullable<int> factionID { get; set; }
         public Nullable<double> radius { get; set; }
+    
+        public virtual chrFaction chrFaction { get; set; }
+        public virtual ICollection<mapConstellationJump> mapConstellationJumps { get; set; }
+        public virtual ICollection<mapConstellationJump> mapConstellationJumps1 { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual ICollection<mapDenormalize> mapDenormalizes { get; set; }
+        public virtual ICollection<mapSolarSystemJump> mapSolarSystemJumps { get; set; }
+        public virtual ICollection<mapSolarSystemJump> mapSolarSystemJumps1 { get; set; }
+        public virtual ICollection<mapSolarSystem> mapSolarSystems { get; set; }
+        public virtual ICollection<staStation> staStations { get; set; }
     }
 }

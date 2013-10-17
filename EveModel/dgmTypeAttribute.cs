@@ -18,5 +18,8 @@ namespace EveModel
         public short attributeID { get; set; }
         public Nullable<int> valueInt { get; set; }
         public Nullable<double> valueFloat { get; set; }
+    
+        public virtual dgmAttributeType dgmAttributeType { get; set; }
+        public virtual invType invType { get; set; }
     }
 }

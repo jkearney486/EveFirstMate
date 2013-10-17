@@ -14,6 +14,18 @@ namespace EveModel
     
     public partial class mapSolarSystem
     {
+        public mapSolarSystem()
+        {
+            this.chrFactions = new HashSet<chrFaction>();
+            this.crpNPCCorporations = new HashSet<crpNPCCorporation>();
+            this.mapDenormalizes = new HashSet<mapDenormalize>();
+            this.mapLandmarks = new HashSet<mapLandmark>();
+            this.mapSolarSystemJumps = new HashSet<mapSolarSystemJump>();
+            this.mapSolarSystemJumps1 = new HashSet<mapSolarSystemJump>();
+            this.ramAssemblyLineStations = new HashSet<ramAssemblyLineStation>();
+            this.staStations = new HashSet<staStation>();
+        }
+    
         public Nullable<int> regionID { get; set; }
         public Nullable<int> constellationID { get; set; }
         public int solarSystemID { get; set; }
@@ -40,5 +52,18 @@ namespace EveModel
         public Nullable<double> radius { get; set; }
         public Nullable<int> sunTypeID { get; set; }
         public string securityClass { get; set; }
+    
+        public virtual ICollection<chrFaction> chrFactions { get; set; }
+        public virtual chrFaction chrFaction { get; set; }
+        public virtual ICollection<crpNPCCorporation> crpNPCCorporations { get; set; }
+        public virtual invType invType { get; set; }
+        public virtual mapConstellation mapConstellation { get; set; }
+        public virtual ICollection<mapDenormalize> mapDenormalizes { get; set; }
+        public virtual ICollection<mapLandmark> mapLandmarks { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual ICollection<mapSolarSystemJump> mapSolarSystemJumps { get; set; }
+        public virtual ICollection<mapSolarSystemJump> mapSolarSystemJumps1 { get; set; }
+        public virtual ICollection<ramAssemblyLineStation> ramAssemblyLineStations { get; set; }
+        public virtual ICollection<staStation> staStations { get; set; }
     }
 }

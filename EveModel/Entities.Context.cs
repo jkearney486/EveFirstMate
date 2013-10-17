@@ -28,7 +28,6 @@ namespace EveModel
     
         public DbSet<agtAgent> agtAgents { get; set; }
         public DbSet<agtAgentType> agtAgentTypes { get; set; }
-        public DbSet<agtResearchAgent> agtResearchAgents { get; set; }
         public DbSet<chrAncestry> chrAncestries { get; set; }
         public DbSet<chrAttribute> chrAttributes { get; set; }
         public DbSet<chrBloodline> chrBloodlines { get; set; }
@@ -36,9 +35,7 @@ namespace EveModel
         public DbSet<chrRace> chrRaces { get; set; }
         public DbSet<crpActivity> crpActivities { get; set; }
         public DbSet<crpNPCCorporationDivision> crpNPCCorporationDivisions { get; set; }
-        public DbSet<crpNPCCorporationResearchField> crpNPCCorporationResearchFields { get; set; }
         public DbSet<crpNPCCorporation> crpNPCCorporations { get; set; }
-        public DbSet<crpNPCCorporationTrade> crpNPCCorporationTrades { get; set; }
         public DbSet<crpNPCDivision> crpNPCDivisions { get; set; }
         public DbSet<crtCategory> crtCategories { get; set; }
         public DbSet<crtCertificate> crtCertificates { get; set; }
@@ -76,7 +73,6 @@ namespace EveModel
         public DbSet<mapLandmark> mapLandmarks { get; set; }
         public DbSet<mapLocationScene> mapLocationScenes { get; set; }
         public DbSet<mapLocationWormholeClass> mapLocationWormholeClasses { get; set; }
-        public DbSet<mapRegionJump> mapRegionJumps { get; set; }
         public DbSet<mapRegion> mapRegions { get; set; }
         public DbSet<mapSolarSystemJump> mapSolarSystemJumps { get; set; }
         public DbSet<mapSolarSystem> mapSolarSystems { get; set; }
@@ -93,7 +89,6 @@ namespace EveModel
         public DbSet<ramInstallationTypeContent> ramInstallationTypeContents { get; set; }
         public DbSet<ramTypeRequirement> ramTypeRequirements { get; set; }
         public DbSet<staOperation> staOperations { get; set; }
-        public DbSet<staOperationService> staOperationServices { get; set; }
         public DbSet<staService> staServices { get; set; }
         public DbSet<staStation> staStations { get; set; }
         public DbSet<staStationType> staStationTypes { get; set; }

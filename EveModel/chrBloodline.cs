@@ -31,5 +31,8 @@ namespace EveModel
         public string shortDescription { get; set; }
         public string shortMaleDescription { get; set; }
         public string shortFemaleDescription { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual invType invType { get; set; }
     }
 }

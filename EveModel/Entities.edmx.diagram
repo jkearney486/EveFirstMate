@@ -4,84 +4,195 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c311548e49a54d87a53b421bce67a8d2" Name="Diagram1" ZoomLevel="25">
-        <EntityTypeShape EntityType="EVEDBModel.agtAgent" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.agtAgentType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.agtResearchAgent" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.chrAncestry" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.chrAttribute" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.chrBloodline" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.chrFaction" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.chrRace" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpActivity" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationDivision" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationResearchField" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporation" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationTrade" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crpNPCDivision" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crtCategory" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crtCertificate" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crtClass" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crtRecommendation" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.crtRelationship" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeCategory" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeType" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.dgmEffect" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.dgmTypeAttribute" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.dgmTypeEffect" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.eveUnit" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invBlueprintType" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invCategory" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invContrabandType" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResourcePurpos" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResource" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invFlag" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invGroup" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invItem" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invMarketGroup" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invMetaGroup" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invMetaType" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invName" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invPosition" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invTypeMaterial" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invTypeReaction" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invType" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.invUniqueName" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapCelestialStatistic" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapConstellationJump" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapConstellation" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapDenormalize" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapJump" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapLandmark" Width="1.5" PointX="2.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapLocationScene" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapLocationWormholeClass" Width="1.5" PointX="6.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapRegionJump" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapRegion" Width="1.5" PointX="16.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystemJump" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystem" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.mapUniverse" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.planetSchematic" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsPinMap" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsTypeMap" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramActivity" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLine" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineStation" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerCategory" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerGroup" Width="1.5" PointX="4.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineType" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramInstallationTypeContent" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.ramTypeRequirement" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.staOperation" Width="1.5" PointX="22.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.staOperationService" Width="1.5" PointX="22.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.staService" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.staStation" Width="1.5" PointX="10.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.staStationType" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.translationTable" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.trnTranslationColumn" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.trnTranslationLanguage" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.trnTranslation" Width="1.5" PointX="6.75" PointY="24.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.warCombatZone" Width="1.5" PointX="24.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EVEDBModel.warCombatZoneSystem" Width="1.5" PointX="24.75" PointY="12.75" IsExpanded="true" />
+      <Diagram DiagramId="d31bc5b099ca472da8da0626f13c7ebd" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="EVEDBModel.agtAgent" Width="1.5" PointX="3" PointY="49.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.agtAgentType" Width="1.5" PointX="0.75" PointY="45" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrAncestry" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrAttribute" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrBloodline" Width="1.5" PointX="7.5" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrFaction" Width="1.5" PointX="18" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.chrRace" Width="1.5" PointX="3" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpActivity" Width="1.5" PointX="8.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporationDivision" Width="1.5" PointX="18" PointY="55.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCCorporation" Width="1.5" PointX="15.75" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crpNPCDivision" Width="1.5" PointX="0.75" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtCategory" Width="1.5" PointX="18.75" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtCertificate" Width="1.5" PointX="21" PointY="61.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtClass" Width="1.5" PointX="18.75" PointY="72.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtRecommendation" Width="1.5" PointX="10.5" PointY="50.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.crtRelationship" Width="1.5" PointX="23.25" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeCategory" Width="1.5" PointX="6" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmAttributeType" Width="1.5" PointX="8.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmEffect" Width="1.5" PointX="8.25" PointY="63.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmTypeAttribute" Width="1.5" PointX="10.5" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.dgmTypeEffect" Width="1.5" PointX="10.5" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.eveUnit" Width="1.5" PointX="6" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invBlueprintType" Width="1.5" PointX="7.5" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invCategory" Width="1.5" PointX="0.75" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invContrabandType" Width="1.5" PointX="7.5" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResourcePurpos" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invControlTowerResource" Width="1.5" PointX="13.5" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invFlag" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invGroup" Width="1.5" PointX="3" PointY="54.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invItem" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMarketGroup" Width="1.5" PointX="3" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMetaGroup" Width="1.5" PointX="5.25" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invMetaType" Width="1.5" PointX="7.5" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invName" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invPosition" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invTypeMaterial" Width="1.5" PointX="7.5" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invTypeReaction" Width="1.5" PointX="7.5" PointY="75.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invType" Width="1.5" PointX="5.25" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.invUniqueName" Width="1.5" PointX="5.25" PointY="60.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapCelestialStatistic" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapConstellationJump" Width="1.5" PointX="24.75" PointY="67.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapConstellation" Width="1.5" PointX="22.5" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapDenormalize" Width="1.5" PointX="13.5" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapJump" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLandmark" Width="1.5" PointX="15.75" PointY="69.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLocationScene" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapLocationWormholeClass" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapRegion" Width="1.5" PointX="20.25" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystemJump" Width="1.5" PointX="25.75" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapSolarSystem" Width="1.5" PointX="13.5" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.mapUniverse" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematic" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsPinMap" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.planetSchematicsTypeMap" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramActivity" Width="1.5" PointX="8.25" PointY="79.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLine" Width="1.5" PointX="28" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineStation" Width="1.5" PointX="27" PointY="81.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerCategory" Width="1.5" PointX="28" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineTypeDetailPerGroup" Width="1.5" PointX="31" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramAssemblyLineType" Width="1.5" PointX="25.75" PointY="48.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramInstallationTypeContent" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.ramTypeRequirement" Width="1.5" PointX="10.5" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staOperation" Width="1.5" PointX="10.5" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staService" Width="1.5" PointX="12.75" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staStation" Width="1.5" PointX="24.75" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.staStationType" Width="1.5" PointX="7.5" PointY="109.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.translationTable" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslationColumn" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslationLanguage" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.trnTranslation" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.warCombatZone" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EVEDBModel.warCombatZoneSystem" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="EVEDBModel.agtAgents_FK_agentType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.agtAgents_FK_corporation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.agtAgents_FK_division" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.chrBloodlines_FK_corporation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.chrBloodlines_FK_shipType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.chrFactions_FK_corporationID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.chrFactions_FK_militiaCorporationID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.chrFactions_FK_solarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invContrabandTypes_FK_faction" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invControlTowerResources_FK_faction" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellations_FK_faction" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapRegions_FK_faction" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystems_FK_faction" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypes_FK_race" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporationDivisions_FK_corporation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporationDivisions_FK_division" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_enemy" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_friend" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_investor1" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_investor2" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_investor3" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_investor4" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporations_FK_solarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtCertificates_FK_corp" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLines_FK_owner" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_owner" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStations_FK_corporation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtCertificates_FK_category" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtCertificates_FK_class" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtRecommendations_FK_certificate" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtRelationships_FK_child" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crtRecommendations_FK_shipType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmAttributeTypes_FK_category" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmAttributeTypes_FK_unit" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_dischargeAttribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_durationAttribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_falloffAttribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_fittingUsageChanceAttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_npcActivationChanceAttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_npcUsageChanceAttributeID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_rangeAttribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmEffects_FK_trackingSpeedAttribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmTypeAttributes_FK_attribute" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmTypeEffects_FK_effects" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmTypeAttributes_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.dgmTypeEffects_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invBlueprintTypes_FK_blueprintType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invBlueprintTypes_FK_parentBlueprintType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invBlueprintTypes_FK_productType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invGroups_FK_category" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineTypeDetailPerCategory_FK_category" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invContrabandTypes_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invControlTowerResources_FK_constrolTowerType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invControlTowerResources_FK_resourceType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypes_FK_group" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invUniqueNames_FK_group" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapDenormalize_FK_group" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineTypeDetailPerGroup_FK_group" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invNames_FK_item" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invPositions_FK_location" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invMarketGroups_FK_parentGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypes_FK_marketGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invMetaTypes_FK_metaGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invMetaTypes_FK_parentType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invMetaTypes_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypeMaterials_FK_materialType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypeMaterials_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.invTypeReactions_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapDenormalize_FK_type" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystems_FK_sunType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramTypeRequirements_FK_requiredType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_amarrStationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_caldariStationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_gallenteStationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_joveStationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperations_FK_minmatarStationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStationTypes_FK_stationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellationJumps_FK_fromConstellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellationJumps_FK_fromRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellationJumps_FK_toConstellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellationJumps_FK_toRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapConstellations_FK_region" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapDenormalize_FK_constellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_fromConstellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_toConstellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystems_FK_constellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStation_FK_constellation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapDenormalize_FK_region" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapDenormalize_FK_solarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapLandmarks_FK_location" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_fromRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_toRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystems_FK_regionID" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_region" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStationd_FK_region" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_fromSolarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapSolarSystemJumps_FK_toSolarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_solarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStations_FK_solarSystem" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLines_FK_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineTypes_FK_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramTypeRequirements_FK_activity" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLines_FK_assemblyLineType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLines_FK_container" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_assemblyLineType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_station" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineStations_FK_stationType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineTypeDetailPerCategory_FK_assemblyLineType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.ramAssemblyLineTypeDetailPerGroup_FK_assemblyLineType" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staStations_FK_operation" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.agtResearchAgents" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporationResearchFields" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.crpNPCCorporationTrades" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.mapRegionJumps" ManuallyRouted="false" />
+        <AssociationConnector Association="EVEDBModel.staOperationServices" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

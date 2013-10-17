@@ -20,5 +20,9 @@ namespace EveModel
         public Nullable<int> quantity { get; set; }
         public Nullable<double> minSecurityLevel { get; set; }
         public Nullable<int> factionID { get; set; }
+    
+        public virtual chrFaction chrFaction { get; set; }
+        public virtual invType invType { get; set; }
+        public virtual invType invType1 { get; set; }
     }
 }

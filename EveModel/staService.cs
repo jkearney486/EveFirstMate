@@ -14,8 +14,15 @@ namespace EveModel
     
     public partial class staService
     {
+        public staService()
+        {
+            this.staOperations = new HashSet<staOperation>();
+        }
+    
         public int serviceID { get; set; }
         public string serviceName { get; set; }
         public string description { get; set; }
+    
+        public virtual ICollection<staOperation> staOperations { get; set; }
     }
 }

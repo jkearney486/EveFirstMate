@@ -20,5 +20,8 @@ namespace EveModel
         public Nullable<double> confiscateMinSec { get; set; }
         public Nullable<double> fineByValue { get; set; }
         public Nullable<double> attackMinSec { get; set; }
+    
+        public virtual chrFaction chrFaction { get; set; }
+        public virtual invType invType { get; set; }
     }
 }

@@ -17,5 +17,8 @@ namespace EveModel
         public int typeID { get; set; }
         public short effectID { get; set; }
         public Nullable<bool> isDefault { get; set; }
+    
+        public virtual dgmEffect dgmEffect { get; set; }
+        public virtual invType invType { get; set; }
     }
 }

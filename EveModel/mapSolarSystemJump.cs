@@ -20,5 +20,12 @@ namespace EveModel
         public int toSolarSystemID { get; set; }
         public Nullable<int> toConstellationID { get; set; }
         public Nullable<int> toRegionID { get; set; }
+    
+        public virtual mapConstellation mapConstellation { get; set; }
+        public virtual mapConstellation mapConstellation1 { get; set; }
+        public virtual mapRegion mapRegion { get; set; }
+        public virtual mapRegion mapRegion1 { get; set; }
+        public virtual mapSolarSystem mapSolarSystem { get; set; }
+        public virtual mapSolarSystem mapSolarSystem1 { get; set; }
     }
 }

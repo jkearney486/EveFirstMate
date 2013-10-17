@@ -14,8 +14,15 @@ namespace EveModel
     
     public partial class crtCategory
     {
+        public crtCategory()
+        {
+            this.crtCertificates = new HashSet<crtCertificate>();
+        }
+    
         public byte categoryID { get; set; }
         public string description { get; set; }
         public string categoryName { get; set; }
+    
+        public virtual ICollection<crtCertificate> crtCertificates { get; set; }
     }
 }

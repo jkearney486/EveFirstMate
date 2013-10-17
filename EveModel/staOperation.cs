@@ -14,6 +14,12 @@ namespace EveModel
     
     public partial class staOperation
     {
+        public staOperation()
+        {
+            this.staStations = new HashSet<staStation>();
+            this.staServices = new HashSet<staService>();
+        }
+    
         public Nullable<byte> activityID { get; set; }
         public byte operationID { get; set; }
         public string operationName { get; set; }
@@ -28,5 +34,14 @@ namespace EveModel
         public Nullable<int> amarrStationTypeID { get; set; }
         public Nullable<int> gallenteStationTypeID { get; set; }
         public Nullable<int> joveStationTypeID { get; set; }
+    
+        public virtual crpActivity crpActivity { get; set; }
+        public virtual invType invType { get; set; }
+        public virtual invType invType1 { get; set; }
+        public virtual invType invType2 { get; set; }
+        public virtual invType invType3 { get; set; }
+        public virtual invType invType4 { get; set; }
+        public virtual ICollection<staStation> staStations { get; set; }
+        public virtual ICollection<staService> staServices { get; set; }
     }
 }

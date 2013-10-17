@@ -19,5 +19,7 @@ namespace EveModel
         public Nullable<int> parentTypeID { get; set; }
         public Nullable<byte> parentLevel { get; set; }
         public Nullable<int> childID { get; set; }
+    
+        public virtual crtCertificate crtCertificate { get; set; }
     }
 }

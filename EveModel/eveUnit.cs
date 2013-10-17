@@ -14,9 +14,16 @@ namespace EveModel
     
     public partial class eveUnit
     {
+        public eveUnit()
+        {
+            this.dgmAttributeTypes = new HashSet<dgmAttributeType>();
+        }
+    
         public byte unitID { get; set; }
         public string unitName { get; set; }
         public string displayName { get; set; }
         public string description { get; set; }
+    
+        public virtual ICollection<dgmAttributeType> dgmAttributeTypes { get; set; }
     }
 }

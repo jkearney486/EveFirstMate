@@ -14,9 +14,18 @@ namespace EveModel
     
     public partial class crpNPCDivision
     {
+        public crpNPCDivision()
+        {
+            this.agtAgents = new HashSet<agtAgent>();
+            this.crpNPCCorporationDivisions = new HashSet<crpNPCCorporationDivision>();
+        }
+    
         public byte divisionID { get; set; }
         public string divisionName { get; set; }
         public string description { get; set; }
         public string leaderType { get; set; }
+    
+        public virtual ICollection<agtAgent> agtAgents { get; set; }
+        public virtual ICollection<crpNPCCorporationDivision> crpNPCCorporationDivisions { get; set; }
     }
 }

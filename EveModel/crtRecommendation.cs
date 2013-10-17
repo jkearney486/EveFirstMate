@@ -18,5 +18,8 @@ namespace EveModel
         public Nullable<int> shipTypeID { get; set; }
         public Nullable<int> certificateID { get; set; }
         public byte recommendationLevel { get; set; }
+    
+        public virtual crtCertificate crtCertificate { get; set; }
+        public virtual invType invType { get; set; }
     }
 }

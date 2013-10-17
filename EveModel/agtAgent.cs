@@ -14,6 +14,11 @@ namespace EveModel
     
     public partial class agtAgent
     {
+        public agtAgent()
+        {
+            this.invTypes = new HashSet<invType>();
+        }
+    
         public int agentID { get; set; }
         public Nullable<byte> divisionID { get; set; }
         public Nullable<int> corporationID { get; set; }
@@ -22,5 +27,10 @@ namespace EveModel
         public Nullable<short> quality { get; set; }
         public Nullable<int> agentTypeID { get; set; }
         public Nullable<bool> isLocator { get; set; }
+    
+        public virtual agtAgentType agtAgentType { get; set; }
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual crpNPCDivision crpNPCDivision { get; set; }
+        public virtual ICollection<invType> invTypes { get; set; }
     }
 }

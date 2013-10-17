@@ -14,6 +14,12 @@ namespace EveModel
     
     public partial class crtCertificate
     {
+        public crtCertificate()
+        {
+            this.crtRecommendations = new HashSet<crtRecommendation>();
+            this.crtRelationships = new HashSet<crtRelationship>();
+        }
+    
         public int certificateID { get; set; }
         public Nullable<byte> categoryID { get; set; }
         public Nullable<int> classID { get; set; }
@@ -21,5 +27,11 @@ namespace EveModel
         public Nullable<int> corpID { get; set; }
         public Nullable<int> iconID { get; set; }
         public string description { get; set; }
+    
+        public virtual crpNPCCorporation crpNPCCorporation { get; set; }
+        public virtual crtCategory crtCategory { get; set; }
+        public virtual crtClass crtClass { get; set; }
+        public virtual ICollection<crtRecommendation> crtRecommendations { get; set; }
+        public virtual ICollection<crtRelationship> crtRelationships { get; set; }
     }
 }
