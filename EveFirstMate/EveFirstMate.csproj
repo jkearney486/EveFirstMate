@@ -165,6 +165,7 @@
     <Content Include="Scripts\knockout-3.0.0beta.js" />
     <Content Include="Scripts\knockout-delegatedEvents.js" />
     <Content Include="Scripts\knockout-delegatedEvents.min.js" />
+    <Content Include="Scripts\knockout-extensions.js" />
     <Content Include="Scripts\knockout-postbox.js" />
     <Content Include="Scripts\knockout-postbox.min.js" />
     <Content Include="Scripts\knockout.mapping.debug.js" />

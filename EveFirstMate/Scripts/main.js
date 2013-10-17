@@ -1,6 +1,10 @@
 ﻿(function (EVEFIRSTMATE) {
     "use strict";
 
+    if (!EVEFIRSTMATE) {
+        return;
+    }
+
     var TypeMenuModel,
         ItemInfoModel,
         MarketModel,
@@ -18,9 +22,9 @@
     ko.utils.extend(TypeMenuModel.prototype, {
         update: function (data) {
             this.typeID((data && data.typeID) || null);
-            this.typeName((data && data.typeID) || null);
-            this.description((data && data.typeID) || null);
-            this.marketGroupID((data && data.typeID) || null);
+            this.typeName((data && data.typeName) || null);
+            this.description((data && data.description) || null);
+            this.marketGroupID((data && data.marketGroupID) || null);
         }
     });
 
@@ -54,7 +58,6 @@
             this.marketGroupName((data && data.marketGroupName) || null);
             this.description((data && data.description) || null);
             this.hasTypes((data && data.hasTypes) || null);
-            this.isOpen((data && data.isOpen) || false);
         }
     });
 
@@ -88,17 +91,16 @@
                         // then display the list
                         $.ajax({
                             type: "GET",
-                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetTypes/",
-                            data: { marketGroupID: marketGroup.marketGroupID() },
+                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetTypes/" + ko.unwrap(marketGroup.marketGroupID),
+                            data: "",
                             context: this,
-                            contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (data) {
                                 var invTypes = [],
                                     openLeafNode = this.openLeafNode();
                                 if (data && data.length > 0) {
                                     ko.utils.arrayForEach(data, function (type) {
-                                        invTypes.push(new TypeModel(type));
+                                        invTypes.push(new TypeMenuModel(type));
                                     });
                                 }
                                 marketGroup.invTypes(invTypes);
@@ -130,10 +132,9 @@
                         // then display the list
                         $.ajax({
                             type: "GET",
-                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetChildGroups/",
-                            data: { marketGroupID: marketGroup.marketGroupID() },
+                            url: EVEFIRSTMATE.BASEURL + "MarketGroup/GetChildGroups/" + ko.unwrap(marketGroup.marketGroupID),
+                            data: "",
                             context: marketGroup,
-                            contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (data) {
                                 var childMarketGroups = [];

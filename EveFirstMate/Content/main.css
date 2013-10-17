@@ -175,9 +175,9 @@ noscript {
 }
 
 #wrapper {
-    width: 90%;
+    width: 1280px;
     margin: 0 auto;
-    font-size: 1.4em;
+    font-size: 1.2em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -204,19 +204,19 @@ noscript {
 }
 
 #items {
-    width: 30%;
-    margin: 0 2%;
+    width: 384px;
+    margin: 0;
     float: left;
 }
 
 #fitting {
-    width: 62%;
-    margin: 0 2%;
+    width: 800px;
+    margin: 0 0 0 10px;
     float: left;
 }
 
 #marketGroups {
-    height: 600px;
+    height: 400px;
     margin: 0;
     padding: 0;
     overflow-y: auto;

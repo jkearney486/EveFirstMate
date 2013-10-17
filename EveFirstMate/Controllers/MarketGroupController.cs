@@ -20,20 +20,18 @@ namespace EveFirstMate.Controllers
             return Json(marketGroups, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetChildGroups(int marketGroupID)
+        public JsonResult GetChildGroups(int id)
         {
-            //throw new NotImplementedException();
             invMarketGroupDAC dac = new invMarketGroupDAC();
-            List<MarketGroupMenuModel> marketGroups = dac.GetChildMenuGroups(marketGroupID);
+            List<MarketGroupMenuModel> marketGroups = dac.GetChildMenuGroups(id);
 
             return Json(marketGroups, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetTypes(int marketGroupID)
+        public JsonResult GetTypes(int id)
         {
-            //throw new NotImplementedException();
             invTypesDAC dac = new invTypesDAC();
-            List<TypeMenuModel> types = dac.GetMenuTypes(marketGroupID);
+            List<TypeMenuModel> types = dac.GetMenuTypes(id);
 
             return Json(types, JsonRequestBehavior.AllowGet);
         }
