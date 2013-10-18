@@ -128,6 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\JsonNetResult.cs" />
+    <Compile Include="Common\Utils.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarketGroupController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +187,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ApiControllers\" />
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
@@ -218,7 +220,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>50204</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:1036/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

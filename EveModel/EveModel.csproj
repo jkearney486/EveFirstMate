@@ -67,6 +67,7 @@
     <Compile Include="chrRace.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\Utils.cs" />
     <Compile Include="crpActivity.cs">
       <DependentUpon>Entities.tt</DependentUpon>
     </Compile>

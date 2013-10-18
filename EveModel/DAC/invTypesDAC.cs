@@ -1,4 +1,5 @@
-﻿using EveModel.Models;
+﻿using EveModel.Common;
+using EveModel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,21 @@ namespace EveModel.DAC
         {
             using (EVEEntities entities = new EVEEntities())
             {
-                var types = from t in entities.invTypes
-                            where t.marketGroupID == marketGroupID
-                            select new TypeMenuModel
-                            {
-                                typeID = t.typeID,
-                                typeName = t.typeName,
-                                marketGroupID = t.marketGroupID,
-                                description = t.description
-                            };
-                return types.OrderBy(x => x.typeName).ToList();
+                var types = (from t in entities.invTypes
+                             where t.marketGroupID == marketGroupID
+                             orderby t.typeName
+                             select new TypeMenuModel
+                             {
+                                 typeID = t.typeID,
+                                 typeName = t.typeName,
+                                 marketGroupID = t.marketGroupID,
+                                 description = t.description
+                             }).ToList();
+
+                foreach (var item in types)
+                    item.description = Utils.ParseTypeDescription(item.description);
+                
+                return types;
             }
         }
     }

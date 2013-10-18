@@ -1,12 +1,20 @@
 ﻿(function (ko) {
-    // this binding is designed to render a text block that has embedded newline characters as a <br>
-    // and inlined html tags such as <i>, <b> as <em>, <strong>
+    // this binding is meant to handle text blocks that are formatted to allow limited styling
+    // the binding expects to see [b][/b], [i][/i], and [br] tags
+    // and turns these into <strong></strong>, <em></em>, and <br> respectively
     ko.bindingHandlers.textBlock = {
-        init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        update: function (element, valueAccessor) {
+            var textValue = valueAccessor(),
+                html = "";
 
-        },
-        update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
-            var textValue = valueAccessor();
+            html = textValue();
+            html = html.replace(/\[b\]/gi, "<strong>")
+                       .replace(/\[\/b\]/gi, "</strong>")
+                       .replace(/\[i\]/gi, "<em>")
+                       .replace(/\[\/i\]/gi, "</em>")
+                       .replace(/\[br\]/gi, "<br>");
+
+            element.innerHTML = html;
         }
     };
 })(window.ko);
