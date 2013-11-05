@@ -1,7 +1,7 @@
-﻿(function (EVEFIRSTMATE) {
+﻿(function (EVEFIRSTMATE, $) {
     "use strict";
 
-    if (!EVEFIRSTMATE) {
+    if (!EVEFIRSTMATE || !ko || !$) {
         return;
     }
 
@@ -192,4 +192,4 @@
         }
     });
 
-}(window.EVEFIRSTMATE));
+}(window.EVEFIRSTMATE, window.jQuery));

@@ -1,4 +1,8 @@
 ﻿(function (ko) {
+    if (!ko) {
+        return;
+    }
+
     // this binding is meant to handle text blocks that are formatted to allow limited styling
     // the binding expects to see [b][/b], [i][/i], and [br] tags
     // and turns these into <strong></strong>, <em></em>, and <br> respectively
