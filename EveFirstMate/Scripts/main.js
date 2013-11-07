@@ -1,4 +1,4 @@
-﻿(function (EVEFIRSTMATE, $) {
+﻿(function (EVEFIRSTMATE, ko, $) {
     "use strict";
 
     if (!EVEFIRSTMATE || !ko || !$) {
@@ -192,4 +192,4 @@
         }
     });
 
-}(window.EVEFIRSTMATE, window.jQuery));
+}(window.EVEFIRSTMATE, window.ko, window.jQuery));
